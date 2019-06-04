@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.pm.PackageManager
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import java.util.ArrayList
 
 enum class PermissionType {
     CAMERA,STORAGE,GPS,PHONE,STORAGE_CAMERA
@@ -41,6 +42,10 @@ object Permissions {
         }
     }
 
+    fun checkPermission(context: Context, permissions : String) : Boolean {
+        return ContextCompat.checkSelfPermission(context, permissions) == PackageManager.PERMISSION_GRANTED
+    }
+
     fun askPermission(activity: Activity, permissions : PermissionType, permissionCode : Int){
         when (permissions){
             PermissionType.CAMERA->{
@@ -59,5 +64,9 @@ object Permissions {
                 ActivityCompat.requestPermissions(activity, CAMERA_STORAGE_PERMISSION, permissionCode)
             }
         }
+    }
+
+    fun askPermission(activity: Activity, permissions: List<String> , permissionCode: Int){
+        ActivityCompat.requestPermissions(activity, permissions.toTypedArray(),permissionCode)
     }
 }

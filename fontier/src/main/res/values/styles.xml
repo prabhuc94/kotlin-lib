@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="GDOTheme" parent="Theme.MaterialComponents.DayNight.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="colorPrimaryDark">#3F51B5</item>
+        <item name="colorPrimary">#6474D5</item>
+
+        <!-- Set this to true if you want Full Screen without status bar -->
+        <item name="android:windowFullscreen">false</item>
+
+        <item name="android:windowIsFloating">false</item>
+
+        <!-- This is important! Don't forget to set window background -->
+        <item name="android:windowBackground">@color/colorWhite</item>
+
+        <!-- Additionally if you want animations when dialog opening -->
+        <item name="android:windowEnterAnimation">@android:anim/slide_in_left</item>
+        <item name="android:windowExitAnimation">@android:anim/slide_out_right</item>
+    </style>
+    <style name="GDVO_INPUT_THEME" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">#FFF</item>
+        <item name="boxBackgroundMode">filled</item>
+        <item name="boxStrokeColor">#3F51B5</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="boxCornerRadiusTopStart">10sp</item>
+        <item name="boxCornerRadiusTopEnd">10sp</item>
+        <item name="boxCornerRadiusBottomStart">10sp</item>
+        <item name="boxCornerRadiusBottomEnd">10sp</item>
+        <item name="errorEnabled">true</item>
+        <item name="helperTextEnabled">true</item>
+    </style>
+
+
+</resources>
