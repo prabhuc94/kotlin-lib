@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FontView">
+        <attr name="fontName"/>
+    </declare-styleable>
+    <attr name="fontName" format="enum">
+        <enum name="Poppins_Regular" value="1"/>
+        <enum name="Poppins_Light" value="2"/>
+        <enum name="Poppins_ExtraLight" value="3"/>
+        <enum name="Poppins_Bold" value="4"/>
+        <enum name="Poppins_Medium" value="5"/>
+        <enum name="MerrieWeather_Regular" value="6"/>
+        <enum name="MerrieWeather_Bold" value="7"/>
+        <enum name="MerrieWeather_Light" value="8"/>
+        <enum name="Dayrom" value="9"/>
+        <enum name="DayromX" value="10"/>
+    </attr>
+</resources>

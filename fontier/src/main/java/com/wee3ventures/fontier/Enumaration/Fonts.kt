@@ -1,0 +1,15 @@
+package com.wee3ventures.fontier.Enumaration
+
+enum class Fonts {
+    MERRIEWEATHER_REGULAR,
+    MERRIEWEATHER_BOLD,
+    MERRIEWEATHER_LIGHT,
+    POPPINS_REGULAR,
+    POPPINS_MEDIUM,
+    POPPINS_EXTRALIGHT,
+    POPPINS_BOLD,
+    POPPINS_LIGHT,
+    DAYROM_REGULAR,
+    DAYROM_X,
+
+}
