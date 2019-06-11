@@ -16,5 +16,24 @@
                     android:name="android.support.FILE_PROVIDER_PATHS"
                     android:resource="@xml/paths" />
         </provider>
+
+        <activity
+                android:name=".TedImagePickerActivity"
+                android:theme="@style/TedImagePickerTheme" />
+
+        <activity
+                android:name=".zoom.TedImageZoomActivity"
+                android:theme="@style/TedImagePickerTheme.Zoom" />
+
+        <provider
+                android:name="androidx.core.content.FileProvider"
+                android:authorities="${applicationId}.provider"
+                android:exported="false"
+                android:grantUriPermissions="true">
+            <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/provider_paths" />
+        </provider>
+
     </application>
 </manifest>
