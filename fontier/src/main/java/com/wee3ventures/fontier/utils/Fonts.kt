@@ -3,9 +3,10 @@ package com.wee3ventures.fontier.utils
 import android.content.Context
 import android.graphics.Typeface
 import android.os.Build
+import androidx.annotation.Nullable
 import com.wee3ventures.fontier.Enumaration.Fonts
+import com.wee3ventures.fontier.FontView
 import com.wee3ventures.fontier.R
-import java.lang.RuntimeException
 
 object Fonts {
     fun getFontFace(mContext : Context,fontName : Fonts) : Typeface{
@@ -86,5 +87,26 @@ object Fonts {
 
     fun getFontFace(mContext : Context,fontPath : String) : Typeface{
         return Typeface.createFromAsset(mContext.resources.assets,fontPath)
+    }
+
+    fun setFont(@Nullable view : FontView ?= null, @Nullable views : List<FontView> ?= null, @Nullable fontPath: String?= null, @Nullable fontName : Fonts?= Fonts.POPPINS_MEDIUM){
+        when {
+            view != null -> {
+                when {
+                    fontPath != null && fontPath.isNullOrBlank().not() -> view.setFont(fontName = fontPath)
+                    fontName != null -> view.setFont(fontName = fontName)
+                }
+            }
+
+            views != null && views.isNullOrEmpty().not() -> {
+                when {
+                    fontPath != null && fontPath.isNullOrBlank().not() -> {
+                        views.forEach { it.setFont(fontName = fontPath) }
+                    }
+
+                    fontName != null -> views.forEach { it.setFont(fontName = fontName) }
+                }
+            }
+        }
     }
 }

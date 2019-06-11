@@ -13,7 +13,6 @@ import com.wee3ventures.fontier.`interface`.LoginListener
 import com.wee3ventures.fontier.model.LoginModel
 import com.wee3ventures.fontier.utils.Fonts
 import kotlinx.android.synthetic.main.fragment_login_form_common_gdvo.*
-import java.lang.RuntimeException
 
 class LoginPop(val response : LoginModel, val listener: LoginListener) : DialogFragment(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +37,7 @@ class LoginPop(val response : LoginModel, val listener: LoginListener) : DialogF
         setUtility()
     }
 
+    @Suppress("SENSELESS_COMPARISON")
     private fun setUtility(){
         if (response != null){
             when{

@@ -12,6 +12,24 @@ data class LoginModel(
     val fontName : Fonts
 )
 
+data class AboutModel(
+    val logo : Any ?= null,
+    val app_name : Any ?= null,
+    val description : Any ?= null,
+    val app_version : Any ?= null,
+    val play_store_url : Any ?= null,
+    val toolbar_title : Any ?= null,
+    val descFontName : Fonts ?= null,
+    val app_name_fontName : Fonts ?= null,
+    val version_fontName : Fonts ?= null,
+    val common_fontName : Fonts ?= null
+)
+
+data class Social(
+    val facebook_url : Any ?= null,
+    val twitter_url : Any ?= null
+)
+
 internal data class Album(
     val name: String,
     val thumbnailUri: Uri,
