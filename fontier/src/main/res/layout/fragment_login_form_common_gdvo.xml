@@ -113,7 +113,7 @@
                                                app:layout_constraintEnd_toEndOf="parent"
                                                android:layout_marginEnd="32dp"
                                                android:layout_marginRight="32dp"
-                                               android:textColor="@color/red_A200"
+                                               android:textColor="@color/red_A700"
                                                android:padding="5sp"
                                                app:fontName="Poppins_Medium"
                                                app:layout_constraintBottom_toBottomOf="@+id/rememberBox"

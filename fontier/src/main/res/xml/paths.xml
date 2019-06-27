@@ -3,4 +3,5 @@
     <external-path name="media" path="." />
     <files-path name="inter" path="." />
     <root-path name="media2" path="/storage/" />
+    <external-path name="external_files" path="." />
 </paths>

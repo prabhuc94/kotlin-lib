@@ -132,4 +132,165 @@
 
     </style>
 
+
+    <!--Styles APp-->
+    <style name="App.Button.Primary" parent="ThemeOverlay.AppCompat.Dark">
+        <item name="colorButtonNormal">@color/md_grey_500</item>
+        <item name="colorAccent">@color/tb_doc_picker_accent</item>
+        <!--<item name="colorControlHighlight">@color/colorAccent</item>-->
+    </style>
+
+    <style name="App.ProgressBar.Primary" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">@color/tb_doc_picker_accent</item>
+    </style>
+
+    <style name="App.Dialog.BottomSheet" parent="@style/Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:colorBackground">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+    <!--For progress indicator for progressBar-->
+    <style name="LinearProgress" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">@color/tb_doc_picker_accent</item>
+        <!--<item name="android:progressBackgroundTint">@color/colorPrimary</item>-->
+    </style>
+
+    <style name="TbMediaPicker.Progress.Light" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">@color/md_white_1000</item>
+    </style>
+
+    <!--Styles Item-->
+    <style name="SubmitButton" parent="Widget.AppCompat.Button.Small">
+        <item name="android:background">@drawable/tb_doc_picker_sc_button_round_accent</item>
+        <item name="colorControlHighlight">?attr/colorAccent</item>
+
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:color">@color/md_white_1000</item>
+    </style>
+
+    <style name="ToolBarStyle" parent="ToolBarStyle.Base"/>
+
+    <style name="ToolBarStyle.Base" parent="">
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+    </style>
+
+    <style name="ToolBarStyle.Event" parent="ToolBarStyle">
+        <item name="titleTextAppearance">@style/TextAppearance.Widget.Event.Toolbar.Title</item>
+    </style>
+
+    <style name="TextAppearance.Widget.Event.Toolbar.Title" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <!--Any text styling can be done here-->
+        <item name="android:textStyle">normal</item>
+    </style>
+    <style name="BottomNavigation">
+        <!--<item name="android:background">@color/md_white_1000</item>-->
+        <!--<item name="itemBackground">@color/colorPrimary</item>-->
+        <!--<item name="itemIconTint">@color/colorPrimary</item>-->
+        <!--<item name="itemTextColor">@color/navigation_bar_txt_color</item>-->
+        <!--<item name="paddingStart">@dimen/bottom_navigation_padding</item>-->
+        <!--<item name="paddingEnd">@dimen/bottom_navigation_padding</item>-->
+    </style>
+
+    <!-- Styles Text-->
+
+    <style name="App.Base.TextAppearance.Body1" parent="Base.TextAppearance.AppCompat.Body1">
+        <item name="android:ellipsize">end</item>
+        <item name="android:marqueeRepeatLimit">marquee_forever</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="App.Base.TextAppearance.Body2" parent="Base.TextAppearance.AppCompat.Body2">
+        <item name="android:ellipsize">end</item>
+        <item name="android:marqueeRepeatLimit">marquee_forever</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="App.Base.TextAppearance.Display4" parent="Base.TextAppearance.AppCompat.Display4">
+        <item name="android:ellipsize">end</item>
+        <item name="android:marqueeRepeatLimit">marquee_forever</item>
+        <item name="android:maxLines">1</item>
+        <!--<item name="android:fontFamily">sans-serif-light</item>-->
+        <item name="android:textSize">@dimen/font_14</item>
+    </style>
+
+    <!-- -->
+
+    <style name="App.TextAppearance.Text" parent="App.Base.TextAppearance.Body1">
+        <item name="android:textSize">@dimen/font_16</item>
+        <item name="android:textColor">@color/md_grey_600</item>
+    </style>
+
+    <style name="App.TextAppearance.Bold" parent="App.Base.TextAppearance.Body2">
+        <item name="android:textSize">@dimen/font_16</item>
+        <item name="android:textColor">@color/md_grey_800</item>
+    </style>
+
+    <style name="App.TextAppearance.Title" parent="App.Base.TextAppearance.Display4">
+        <!--<item name="android:fontFamily">sans-serif-light</item>-->
+        <item name="android:textSize">@dimen/font_20</item>
+        <item name="android:textColor">@color/md_grey_800</item>
+    </style>
+    <style name="App.TextAppearance.h2" parent="App.Base.TextAppearance.Body1">
+        <!--<item name="android:fontFamily">sans-serif-light</item>-->
+        <item name="android:textSize">@dimen/font_22</item>
+        <item name="android:textColor">@color/md_grey_800</item>
+    </style>
+
+    <style name="App.TextAppearance.h2.bold" parent="App.Base.TextAppearance.Body2">
+        <!--<item name="android:fontFamily">sans-serif-light</item>-->
+        <item name="android:textSize">@dimen/font_24</item>
+        <item name="android:textColor">@color/md_grey_800</item>
+    </style>
+
+    <style name="App.TextAppearance.h3" parent="App.Base.TextAppearance.Body1">
+        <!--<item name="android:fontFamily">sans-serif-light</item>-->
+        <item name="android:textSize">@dimen/font_20</item>
+        <item name="android:textColor">@color/md_grey_800</item>
+    </style>
+
+    <style name="App.TextAppearance.h4" parent="App.Base.TextAppearance.Body1">
+        <!--<item name="android:fontFamily">sans-serif-light</item>-->
+        <item name="android:textSize">@dimen/font_16</item>
+        <item name="android:textColor">@color/md_grey_800</item>
+    </style>
+
+    <style name="App.TextAppearance.h4.Title" parent="App.TextAppearance.h4">
+        <!--<item name="android:fontFamily">sans-serif-light</item>-->
+        <item name="android:ellipsize">end</item>
+        <item name="android:marqueeRepeatLimit">marquee_forever</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="App.TextAppearance.Title.Small" parent="App.Base.TextAppearance.Display4">
+        <!--<item name="android:fontFamily">sans-serif-light</item>-->
+        <item name="android:textSize">@dimen/font_12</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/md_grey_600</item>
+    </style>
+
+    <style name="App.TextAppearance.Caption" parent="App.Base.TextAppearance.Body1">
+        <!--<item name="android:fontFamily">sans-serif-light</item>-->
+        <item name="android:textSize">@dimen/font_12</item>
+        <item name="android:textColor">@color/md_grey_600</item>
+    </style>
+
+
+    <!--***************EditText*******************************-->
+    <style name="MyEditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="colorControlActivated">#dc8f41</item>
+    </style>
+    <style name="MyEditTextStyle2" parent="Widget.AppCompat.EditText">
+        <item name="colorControlActivated">#dc8f41</item>
+        <item name="colorControlNormal">#d11472</item>
+    </style>
+    <style name="ChipTextApperance" parent="TextAppearance.MaterialComponents.Chip">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
 </resources>
