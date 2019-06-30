@@ -4,12 +4,12 @@ import android.net.Uri
 import com.wee3ventures.fontier.Enumaration.Fonts
 
 data class LoginModel(
-    val logo : Any,
-    val background : Any,
-    val passwordError : Any,
-    val usernameError : Any,
-    val fontPath : String,
-    val fontName : Fonts
+    val logo : Any ?= null,
+    val background : Any ?= null,
+    val passwordError : Any ?= null,
+    val usernameError : Any ?= null,
+    val fontPath : String ?= null,
+    val fontName : Fonts ?= null
 )
 
 data class AboutModel(

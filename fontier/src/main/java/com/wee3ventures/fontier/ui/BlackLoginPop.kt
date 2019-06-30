@@ -6,12 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
-import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.wee3ventures.fontier.R
 import com.wee3ventures.fontier.`interface`.LoginListener
 import com.wee3ventures.fontier.model.LoginModel
 import com.wee3ventures.fontier.utils.Fonts
+import com.wee3ventures.fontier.utils.GlideApp
 import kotlinx.android.synthetic.main.fragment_black_login.*
 
 class BlackLoginPop (val response : LoginModel, val listener: LoginListener) : DialogFragment(), View.OnClickListener {
@@ -23,9 +23,12 @@ class BlackLoginPop (val response : LoginModel, val listener: LoginListener) : D
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         val view = inflater.inflate(R.layout.fragment_black_login,container,false)
-        toolbar.setNavigationIcon(R.drawable.ic_close_black_24dp)
-        toolbar.setNavigationOnClickListener { dismiss() }
-        toolbar.title = " "
+        val toolbar = view.findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+        if (toolbar != null) {
+            toolbar.setNavigationIcon(R.drawable.ic_close_black_24dp)
+            toolbar.setNavigationOnClickListener { dismiss() }
+            toolbar.title = " "
+        }
         return view
     }
 
@@ -42,19 +45,21 @@ class BlackLoginPop (val response : LoginModel, val listener: LoginListener) : D
         if (response != null){
             when{
                 response.background != null -> {
-                    Glide.with(activity!!)
+                    GlideApp.with(activity!!)
                         .load(response.background)
                         .into(logBackView)
                 }
 
                 response.logo != null -> {
-                    Glide.with(activity!!)
+                    GlideApp.with(activity!!)
                         .load(response.logo)
-                        .apply (
-                            RequestOptions.placeholderOf(R.drawable.ic_locked_icon_gdo)
+                        .apply {
+                            RequestOptions
+                                .placeholderOf(R.drawable.ic_locked_icon_gdo)
                                 .error(R.drawable.ic_locked_icon_gdo)
                                 .circleCrop()
-                        )
+                                .fitCenter()
+                        }
                         .into(logoView)
                 }
 
@@ -68,6 +73,9 @@ class BlackLoginPop (val response : LoginModel, val listener: LoginListener) : D
                 else -> throw RuntimeException("Some fields are missing")
             }
         }
+
+        loginBtn.setOnClickListener(this)
+        signUpBtn.setOnClickListener(this)
     }
     private fun setFont(typeFace : Typeface){
         userLayout.typeface = typeFace
