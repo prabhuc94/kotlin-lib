@@ -87,11 +87,10 @@
                             android:layout_marginLeft="8dp" android:id="@+id/fontView2"/>
 
                     <com.google.android.material.textfield.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
                             style="@style/GDVO_INPUT_THEME"
                             app:hintEnabled="false"
                             android:layout_marginTop="8dp"
+                            app:errorEnabled="false"
                             android:background="@drawable/login_input_box"
                             app:layout_constraintTop_toBottomOf="@+id/fontView2" android:layout_marginStart="32dp"
                             app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="32dp"
@@ -100,7 +99,7 @@
                         <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/userName"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:hint="@string/username"
                                 android:textColorHint="@color/white_trans"
                                 android:gravity="center"
@@ -108,9 +107,8 @@
                                 android:drawablePadding="@dimen/_10sdp"
                                 android:textStyle="bold"
                                 android:imeOptions="actionNext"
-                                android:inputType="number"
-                                android:background="@android:color/transparent"
-                                android:padding="@dimen/_10sdp"
+                                android:inputType="textPersonName"
+                                android:background="@drawable/login_input_box"
                                 android:textColor="@color/colorWhite"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -132,9 +130,8 @@
                             android:layout_marginStart="8dp" android:id="@+id/fontView3"/>
 
                     <com.google.android.material.textfield.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
                             app:hintEnabled="false"
+                            app:errorEnabled="false"
                             style="@style/GDVO_INPUT_THEME"
                             app:passwordToggleEnabled="true"
                             app:passwordToggleTint="@color/colorWhite"
@@ -147,7 +144,7 @@
                         <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/userPass"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:hint="@string/password"
                                 android:textColorHint="@color/white_trans"
                                 android:gravity="center"
@@ -155,8 +152,7 @@
                                 android:textStyle="bold"
                                 android:imeOptions="actionDone"
                                 android:inputType="textPassword"
-                                android:background="@android:color/transparent"
-                                android:padding="@dimen/_10sdp"
+                                android:background="@drawable/login_input_box"
                                 android:textColor="@color/colorWhite"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -183,6 +179,7 @@
                             android:text="@string/remember_me"
                             android:fontFamily="@font/poppins_medium"
                             android:textSize="@dimen/_13sdp"
+                            android:layout_marginTop="8dp"
                             android:layout_weight="1" android:layout_marginStart="32dp"
                             app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="32dp"
                             app:layout_constraintEnd_toStartOf="@+id/forgotBtn" android:layout_marginEnd="8dp"
@@ -198,6 +195,8 @@
                     android:layout_height="wrap_content"
                     android:text="@string/log_in"
                     android:background="@drawable/premium_dark_back"
+                    app:elevation="@dimen/_5sdp"
+                    app:shapeAppearance="@drawable/premium_dark_back"
                     android:textColor="@color/colorWhite"
                     android:fontFamily="@font/poppins_medium"
                     android:textAllCaps="false"
