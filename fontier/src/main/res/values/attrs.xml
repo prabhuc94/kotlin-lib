@@ -15,4 +15,10 @@
         <enum name="Dayrom" value="9"/>
         <enum name="DayromX" value="10"/>
     </attr>
+    <declare-styleable name="CircleImage">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_circle_background_color" format="color" />
+    </declare-styleable>
 </resources>
