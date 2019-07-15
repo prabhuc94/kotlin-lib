@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
-import com.bumptech.glide.request.RequestOptions
 import com.wee3ventures.fontier.R
 import com.wee3ventures.fontier.`interface`.LoginListener
 import com.wee3ventures.fontier.model.LoginModel
@@ -53,13 +52,8 @@ class LoginPop(val response : LoginModel, val listener: LoginListener) : DialogF
                 response.logo != null -> {
                     GlideApp.with(activity!!)
                         .load(response.logo)
-                        .apply {
-                            RequestOptions
-                                .placeholderOf(R.drawable.ic_locked_icon_gdo)
-                                .error(R.drawable.ic_locked_icon_gdo)
-                                .circleCrop()
-                                .fitCenter()
-                        }
+                        .placeholder(R.drawable.ic_gurudevo_logo)
+                        .error(R.drawable.ic_gurudevo_logo)
                         .into(logoView)
                 }
 

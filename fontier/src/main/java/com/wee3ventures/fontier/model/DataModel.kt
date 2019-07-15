@@ -12,6 +12,13 @@ data class LoginModel(
     val fontName : Fonts ?= null
 )
 
+data class UnErrorModel(
+    val logo : Any ?= null,
+    val background : Any ?= null,
+    val fontPath : String ?= null,
+    val fontName : Fonts ?= null
+)
+
 data class AboutModel(
     val logo : Any ?= null,
     val app_name : Any ?= null,
