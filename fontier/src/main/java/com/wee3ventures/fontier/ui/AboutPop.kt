@@ -22,9 +22,12 @@ class AboutPop (val response : AboutModel) : DialogFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         val view = inflater.inflate(R.layout.fragment_about_form_common_gdvo,container,false)
-        toolbar.setNavigationIcon(R.drawable.ic_close_black_24dp)
-        toolbar.setNavigationOnClickListener { dismiss() }
-        toolbar.title = " "
+        val toolbar = view.findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+        if (toolbar != null) {
+            toolbar.setNavigationIcon(R.drawable.ic_close_black_24dp)
+            toolbar.setNavigationOnClickListener { dismiss() }
+            toolbar.title = " "
+        }
         return view
     }
 

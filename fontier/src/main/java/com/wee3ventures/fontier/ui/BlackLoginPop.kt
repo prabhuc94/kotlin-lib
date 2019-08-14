@@ -75,6 +75,7 @@ class BlackLoginPop (val response : LoginModel, val listener: LoginListener) : D
         }
 
         loginBtn.setOnClickListener(this)
+        forgotBtn.setOnClickListener(this)
         signUpBtn.setOnClickListener(this)
     }
     private fun setFont(typeFace : Typeface){

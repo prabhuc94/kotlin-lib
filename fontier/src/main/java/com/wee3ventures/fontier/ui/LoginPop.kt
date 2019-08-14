@@ -69,6 +69,7 @@ class LoginPop(val response : LoginModel, val listener: LoginListener) : DialogF
         }
 
         loginBtn.setOnClickListener(this)
+        forgotBtn.setOnClickListener(this)
         signUpBtn.setOnClickListener(this)
     }
     private fun setFont(typeFace : Typeface){
