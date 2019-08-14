@@ -7,10 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.Nullable
 import androidx.fragment.app.DialogFragment
-import com.bumptech.glide.Glide
 import com.wee3ventures.fontier.Enumaration.Fonts
 import com.wee3ventures.fontier.R
 import com.wee3ventures.fontier.model.AboutModel
+import com.wee3ventures.fontier.utils.GlideApp
 import kotlinx.android.synthetic.main.fragment_about_form_common_gdvo.*
 
 class AboutPop (val response : AboutModel) : DialogFragment() {
@@ -31,6 +31,14 @@ class AboutPop (val response : AboutModel) : DialogFragment() {
         return view
     }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        if (dialog != null){
+            dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+        }
+        setUtility()
+    }
+
     override fun onStart() {
         super.onStart()
         if (dialog != null){
@@ -43,17 +51,16 @@ class AboutPop (val response : AboutModel) : DialogFragment() {
     @SuppressLint("SetTextI18n")
     private fun setUtility(){
         if (response != null){
-            setFont(response.app_name_fontName,response.version_fontName,response.descFontName,response.common_fontName)
-            when {
-                response.app_name != null -> appNamelabel.text = "${response.app_name}"
-                response.description != null -> desclabel.text = "${response.description}"
-                response.app_version != null -> versionlabel.text = "${resources.getString(R.string.version)} ${response.app_version}"
-                response.toolbar_title != null -> toolbar.title = "${response.toolbar_title}"
-            }
-            Glide.with(this.activity!!.applicationContext)
+            //setFont(response.app_name_fontName,response.version_fontName,response.descFontName,response.common_fontName)
+            appNamelabel.text = "${response.app_name}"
+            GlideApp.with(this)
                 .load(response.logo)
-                .circleCrop()
+                .placeholder(R.drawable.ic_gurudevo_logo)
+                .error(R.drawable.ic_gurudevo_logo)
                 .into(logoView)
+            desclabel.text = "${response.description}"
+            versionlabel.text = "${resources.getString(R.string.version)} ${response.app_version}"
+            toolbar.title = "${response.toolbar_title}"
         }
     }
 

@@ -29,6 +29,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/logoView"
+                    android:maxWidth="@dimen/_100sdp"
+                    android:maxHeight="@dimen/_100sdp"
+                    android:adjustViewBounds="true"
                     tools:srcCompat="@tools:sample/avatars" app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
                     app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
@@ -44,7 +47,7 @@
                                                android:layout_marginRight="32dp"
                                                app:layout_constraintStart_toStartOf="parent"
                                                android:textSize="20sp"
-                                               app:fontName="MerrieWeather_Bold"
+                                               app:fontName="Poppins_Light"
                                                android:layout_marginLeft="32dp" android:layout_marginStart="32dp"
                                                app:layout_constraintTop_toBottomOf="@+id/logoView"
                                                android:layout_marginTop="16dp"/>
@@ -63,7 +66,7 @@
                                                android:layout_marginLeft="32dp"
                                                android:layout_marginStart="32dp"
                                                android:layout_marginTop="32dp"
-                                               app:fontName="Poppins_Medium"
+                                               app:fontName="Poppins_ExtraLight"
                                                app:layout_constraintBottom_toTopOf="@+id/versionlabel"
                                                android:layout_marginBottom="32dp"/>
 
@@ -74,7 +77,7 @@
                                                android:layout_marginBottom="32dp"
                                                android:id="@+id/versionlabel"
                                                android:textSize="@dimen/font_18"
-                                               app:fontName="Poppins_Bold"
+                                               app:fontName="Poppins_Regular"
                                                app:layout_constraintStart_toStartOf="parent"
                                                android:layout_marginLeft="32dp" android:layout_marginStart="32dp"
                                                app:layout_constraintEnd_toEndOf="parent"
