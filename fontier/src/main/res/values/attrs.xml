@@ -21,4 +21,13 @@
         <attr name="civ_border_overlay" format="boolean" />
         <attr name="civ_circle_background_color" format="color" />
     </declare-styleable>
+
+    <declare-styleable name="CheckView">
+        <attr name="backgroundView" format="reference"/>
+        <attr name="srcView" format="reference"/>
+        <attr name="textView" format="string|reference"/>
+        <attr name="tickView" format="reference"/>
+        <attr name="subtitle" format="string|reference"/>
+        <attr name="is_tick" format="boolean"/>
+    </declare-styleable>
 </resources>

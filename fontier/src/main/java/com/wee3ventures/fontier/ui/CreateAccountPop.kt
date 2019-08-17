@@ -43,11 +43,11 @@ class CreateAccountPop (val listener : CreateListener) : DialogFragment(), View.
             }
 
             R.id.signinBtn -> {
-                listener.onSignIn(signIn = true)
+                listener.onSignIn(signIn = true, dialog = this)
             }
 
             R.id.backBtn -> {
-                listener.onBackpressed(backPress = true)
+                listener.onBackpressed(backPress = true, dialog = this)
             }
         }
     }
@@ -57,7 +57,7 @@ class CreateAccountPop (val listener : CreateListener) : DialogFragment(), View.
         val confirmPass = "${confPass.text}"
         if (password == confirmPass){
             confPassLayout.isErrorEnabled = false
-            listener.onSignUp(username = "${userName.text}",userMail = "${mailTxt.text}",userPass = "${userPass.text}")
+            listener.onSignUp(username = "${userName.text}",userMail = "${mailTxt.text}",userPass = "${userPass.text}", dialog = this)
         } else {
             confPassLayout.isErrorEnabled = true
             confPassLayout.error = "Password Mismatch"

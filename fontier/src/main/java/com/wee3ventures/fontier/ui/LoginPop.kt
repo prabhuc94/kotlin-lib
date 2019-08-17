@@ -87,15 +87,15 @@ class LoginPop(val response : LoginModel, val listener: LoginListener) : DialogF
     override fun onClick(v: View?) {
         when(v?.id){
             R.id.loginBtn -> {
-                listener.onLogin(username = "${userName.text}",password = "${userPass.text}",remember_me = rememberBox.isChecked)
+                listener.onLogin(username = "${userName.text}",password = "${userPass.text}",remember_me = rememberBox.isChecked, dialog = this)
             }
 
             R.id.signUpBtn -> {
-                listener.onSignUp(signUp = true)
+                listener.onSignUp(signUp = true, dialog = this)
             }
 
             R.id.forgotBtn -> {
-                listener.onForgot(forgotUsername = true)
+                listener.onForgot(forgotUsername = true, dialog = this)
             }
         }
     }

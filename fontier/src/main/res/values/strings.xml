@@ -30,5 +30,6 @@
     <string name="email">EMAIL</string>
     <string name="pass">PASSWORD</string>
     <string name="conf_pass">CONFIRM PASSWORD</string>
+    <string name="contentdescription">ContentDescription</string>
 
 </resources>

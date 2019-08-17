@@ -86,8 +86,8 @@ class RegisterPop (val response : UnErrorModel, val listener: RegisterListener) 
 
     override fun onClick(v: View?) {
         when(v?.id){
-            R.id.checkBtn -> listener.onCheck("${userName.text}", userLayout, userName )
-            R.id.signinBtn -> listener.onSignIn(true)
+            R.id.checkBtn -> listener.onCheck("${userName.text}", userLayout, userName , dialog = this)
+            R.id.signinBtn -> listener.onSignIn(true, dialog = this)
         }
     }
 }
@@ -163,8 +163,8 @@ class PasswordPop (val response : UnErrorModel, val listener: PasswordListener) 
 
     override fun onClick(v: View?) {
         when(v?.id){
-            R.id.checkBtn -> if (checkPassword()) listener.onPassword("${userPass.text}", confirmlayout)
-            R.id.signinBtn -> listener.onSignIn(true)
+            R.id.checkBtn -> if (checkPassword()) listener.onPassword("${userPass.text}", confirmlayout, dialog = this)
+            R.id.signinBtn -> listener.onSignIn(true, dialog = this)
         }
     }
 
