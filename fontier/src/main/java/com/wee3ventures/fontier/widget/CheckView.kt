@@ -55,16 +55,23 @@ class CheckView : ConstraintLayout {
                     listener?.onCheck(this)
                 }
             }
-        val tickSrc = resources.getDrawable(tickMark!!)
-        val iconDrawable = resources.getDrawable(iconSrc!!)
-        val backSrc = resources.getDrawable(iconBackground!!)
-        setIconBackground(backSrc)
-        setIcon(iconDrawable)
+        if (tickMark != null && tickMark != 0) {
+            val tickSrc = resources.getDrawable(tickMark!!)
+            setTick(tickSrc)
+        }
+        if (iconSrc != null && iconSrc != 0) {
+            val iconDrawable = resources.getDrawable(iconSrc!!)
+            setIcon(iconDrawable)
+        }
+        if (iconBackground != null && iconBackground != 0) {
+            val backSrc = resources.getDrawable(iconBackground!!)
+            setIconBackground(backSrc)
+        }
+
         isTick(isTick)
         setTitle("$titleSrc")
         setSubtitle("$subtitleSrc")
-        setTick(tickSrc)
-        a.recycle()
+        a?.recycle()
     }
 
     fun setIconBackground(drawable : Drawable?){
