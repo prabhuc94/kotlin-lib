@@ -30,14 +30,18 @@ class CheckView : ConstraintLayout {
         initView(context,attrs)
     }
 
+    constructor(context: Context?) : super(context) {
+        initView(context,null)
+    }
+
     @SuppressLint("Recycle")
     private fun initView(context: Context?, attrs: AttributeSet?) {
         val a = context?.obtainStyledAttributes(attrs, R.styleable.CheckView, 0, 0)
         val inflater = context?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val view = inflater.inflate(R.layout.layout_check_view,this,true)
-        val tickMark = a?.getDrawable(R.styleable.CheckView_tickView)
-        val iconSrc = a?.getDrawable(R.styleable.CheckView_srcView)
-        val iconBackground = a?.getDrawable(R.styleable.CheckView_backgroundView)
+        val tickMark = a?.getResourceId(R.styleable.CheckView_tickView,0)
+        val iconSrc = a?.getResourceId(R.styleable.CheckView_srcView, 0)
+        val iconBackground = a?.getResourceId(R.styleable.CheckView_backgroundView, 0)
         val titleSrc = a?.getString(R.styleable.CheckView_textView)
         val subtitleSrc = a?.getString(R.styleable.CheckView_subtitle)
         val isTick = a?.getBoolean(R.styleable.CheckView_is_tick,false)
@@ -51,13 +55,16 @@ class CheckView : ConstraintLayout {
                     listener?.onCheck(this)
                 }
             }
-        setIconBackground(iconBackground)
-        setIcon(iconSrc)
+        val tickSrc = resources.getDrawable(tickMark!!)
+        val iconDrawable = resources.getDrawable(iconSrc!!)
+        val backSrc = resources.getDrawable(iconBackground!!)
+        setIconBackground(backSrc)
+        setIcon(iconDrawable)
         isTick(isTick)
         setTitle("$titleSrc")
         setSubtitle("$subtitleSrc")
-        setTick(tickMark)
-        a?.recycle()
+        setTick(tickSrc)
+        a.recycle()
     }
 
     fun setIconBackground(drawable : Drawable?){
@@ -84,7 +91,7 @@ class CheckView : ConstraintLayout {
         }
     }
 
-    fun setIcon(inputIcon : Drawable?){
+    fun setIcon(inputIcon : Drawable){
         if (icon != null) {
             GlideApp.with(this.context)
                 .load(inputIcon)
@@ -97,20 +104,14 @@ class CheckView : ConstraintLayout {
             GlideApp.with(this.context)
                 .load(tickIcon)
                 .into(tick!!)
-            if ("$tickIcon".isNullOrEmpty().not()) {
-                disableSubtitle()
-            }
         }
     }
 
-    fun setTick(tickIcon : Drawable?){
+    fun setTick(tickIcon : Drawable){
         if (tick != null) {
             GlideApp.with(this.context)
                 .load(tickIcon)
                 .into(tick!!)
-            if ("$tickIcon".isNullOrEmpty().not()) {
-                disableSubtitle()
-            }
         }
     }
 
@@ -123,9 +124,6 @@ class CheckView : ConstraintLayout {
     fun setSubtitle(subtitleValue : Any){
         if (subtitle != null) {
             subtitle?.text = "$subtitleValue"
-            if ("$subtitleValue".isNullOrEmpty().not()) {
-                disableTick()
-            }
         }
     }
 
@@ -141,15 +139,29 @@ class CheckView : ConstraintLayout {
         }
     }
 
+    fun enableTick(){
+        if (tick != null) {
+            tick?.visibility = View.VISIBLE
+        }
+    }
+
+    fun enableSubTitle(){
+        if (subtitle != null) {
+            subtitle?.visibility = View.VISIBLE
+        }
+    }
+
     fun onCheckListener(listener : CheckListener){
         this.listener = listener
     }
 
     fun isTick(tickValue : Boolean?){
         if (tickValue!!){
+            enableTick()
             disableSubtitle()
         } else {
             disableTick()
+            enableSubTitle()
         }
     }
 
