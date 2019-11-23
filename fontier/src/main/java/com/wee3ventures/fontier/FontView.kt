@@ -7,7 +7,6 @@ import android.util.AttributeSet
 import android.view.inputmethod.EditorInfo
 import android.widget.TextView
 import com.wee3ventures.fontier.Enumaration.Fonts
-import java.lang.RuntimeException
 
 class FontView(context: Context, attributeSet: AttributeSet) : TextView(context, attributeSet) {
 
@@ -21,7 +20,7 @@ class FontView(context: Context, attributeSet: AttributeSet) : TextView(context,
         a.recycle()
     }
 
-    private fun setFont(fontName: Int){
+    fun setFont(fontName: Int){
         when (fontName){
             1 -> setFont(Fonts.POPPINS_REGULAR)
             2 -> setFont(Fonts.POPPINS_LIGHT)

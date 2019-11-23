@@ -31,5 +31,7 @@
     <string name="pass">PASSWORD</string>
     <string name="conf_pass">CONFIRM PASSWORD</string>
     <string name="contentdescription">ContentDescription</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
 
 </resources>

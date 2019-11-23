@@ -30,4 +30,29 @@
         <attr name="subtitle" format="string|reference"/>
         <attr name="is_tick" format="boolean"/>
     </declare-styleable>
+
+    <declare-styleable name="GenderCard">
+        <attr name="bg_selector" format="reference|integer"/>
+        <attr name="font_selector" format="integer|reference"/>
+        <attr name="male_icon" format="reference|integer"/>
+        <attr name="female_icon" format="integer|reference"/>
+        <attr name="male_text" format="reference|string"/>
+        <attr name="female_text" format="reference|string"/>
+        <attr name="font_type" format="reference"/>
+        <attr name="male_selected" format="boolean"/>
+        <attr name="female_selected" format="boolean"/>
+        <attr name="android:hint"/>
+        <attr name="is_hint" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="FontCard">
+        <attr name="hint_needed" format="boolean"/>
+        <attr name="is_aadhar" format="boolean"/>
+        <attr name="input_label" format="string|reference"/>
+        <attr name="android:hint"/>
+        <attr name="android:text"/>
+        <attr name="font_face" format="integer|reference"/>
+        <attr name="text_color" format="color|reference"/>
+        <attr name="hint_color" format="color|reference"/>
+    </declare-styleable>
 </resources>
