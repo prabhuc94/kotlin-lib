@@ -50,3 +50,9 @@ internal data class Media(
     val uri: Uri,
     val dateTimeMills: Long
 )
+
+data class TimeDifferenceModel(
+    val days : Int? = null,
+    val hours : Int?=null,
+    val mins : Int? = null
+)
