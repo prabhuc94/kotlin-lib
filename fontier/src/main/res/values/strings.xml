@@ -2,7 +2,7 @@
     <string name="app_name">Fontier</string>
     <string name="remember_me">Remember me</string>
     <string name="forgot_password">Forgot password?</string>
-    <string name="log_in">Log In</string>
+    <string name="log_in">Login</string>
     <string name="don_t_have_account">Don\'t have account?</string>
     <string name="already_have_an_account">Already have account?</string>
     <string name="sign_in">Sign In</string>
@@ -47,5 +47,12 @@
     <string name="ocr_success">Text read successfully</string>
     <string name="ocr_failure">No text captured</string>
     <string name="ocr_error">"Error reading text: %1$s"</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="create_a_new_account">Create a new account</string>
+    <string name="sign_to_continue">Sign to continue</string>
+    <string name="register">Register</string>
+    <string name="check_username_for_set_password_n_small_if_username_available_you_will_refirect_to_set_password_page_small"><![CDATA[Check username for set password. If username available you will redirect to set password page]]></string>
+    <string name="set_password">Set Password</string>
+    <string name="set_the_password_to_complete_the_process">Set the password to complete the process</string>
 
 </resources>

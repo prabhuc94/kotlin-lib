@@ -32,8 +32,8 @@ object Navigator {
     fun URL(context: Context, url : Any){
         val intent = Intent(Intent.ACTION_VIEW)
         intent.data = Uri.parse("$url")
-        intent.addCategory(Intent.CATEGORY_APP_BROWSER)
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+//        intent.addCategory(Intent.CATEGORY_APP_BROWSER)
+//        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
         context.startActivity(intent)
     }
 }

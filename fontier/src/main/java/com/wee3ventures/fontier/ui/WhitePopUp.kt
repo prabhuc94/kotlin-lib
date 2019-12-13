@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.DialogFragment
 import com.wee3ventures.fontier.R
 import com.wee3ventures.fontier.`interface`.PasswordListener
@@ -28,7 +29,7 @@ class RegisterPop (val response : UnErrorModel, val listener: RegisterListener) 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         val view = inflater.inflate(R.layout.fragment_register_form_common_gdvo,container,false)
-        val toolbar = view.findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+        val toolbar = view.findViewById(R.id.toolbar) as Toolbar
         if (toolbar != null) {
             toolbar.setNavigationIcon(R.drawable.ic_close_black_24dp)
             toolbar.setNavigationOnClickListener { dismiss() }

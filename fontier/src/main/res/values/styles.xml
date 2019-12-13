@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <style name="GDOTheme" parent="Theme.MaterialComponents.DayNight.Dialog">
         <item name="android:windowNoTitle">true</item>
         <item name="colorPrimaryDark">#3F51B5</item>
@@ -16,12 +16,10 @@
         <!-- Additionally if you want animations when dialog opening -->
         <item name="android:windowEnterAnimation">@android:anim/slide_in_left</item>
         <item name="android:windowExitAnimation">@android:anim/slide_out_right</item>
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
+        <item name="android:statusBarColor" tools:ignore="NewApi">@color/white</item>
     </style>
     <style name="GDVO_INPUT_THEME" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="boxBackgroundColor">#FFF</item>
-        <item name="boxBackgroundMode">filled</item>
-        <item name="boxStrokeColor">#3F51B5</item>
-        <item name="boxStrokeWidth">2dp</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="boxCornerRadiusTopStart">10sp</item>
@@ -30,6 +28,7 @@
         <item name="boxCornerRadiusBottomEnd">10sp</item>
         <item name="errorEnabled">true</item>
         <item name="helperTextEnabled">true</item>
+
     </style>
 
     <!-- Base application theme. -->
