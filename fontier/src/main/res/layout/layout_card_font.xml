@@ -4,32 +4,46 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         xmlns:tools="http://schemas.android.com/tools"
-        android:padding="@dimen/_5sdp"
         android:orientation="vertical">
-    <com.wee3ventures.fontier.FontView
-            android:id="@+id/hintlabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:fontName="Poppins_Regular"
-            tools:hint="@string/app_name"
-            android:textSize="@dimen/_16sdp"
-            android:textColorHint="@color/grey_800"/>
-<com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardBackgroundColor="@color/white"
-        app:cardUseCompatPadding="true"
-        app:cardCornerRadius="@dimen/_10sdp"
-        app:cardElevation="@dimen/_5sdp"
-        style="@style/Widget.MaterialComponents.CardView">
-    <com.wee3ventures.fontier.FontView
-            android:id="@+id/inputlabel"
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:fontName="Poppins_Regular"
-            tools:text="@string/app_name"
-            android:textSize="@dimen/_18sdp"
-            android:padding="@dimen/_15sdp"
-            android:textColor="@color/grey_800"/>
-</com.google.android.material.card.MaterialCardView>
+            android:padding="@dimen/_5sdp">
+        <com.wee3ventures.fontier.FontView
+                android:id="@+id/hintlabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:fontName="Poppins_Regular"
+                tools:hint="@string/app_name"
+                android:textSize="@dimen/_16sdp"
+                android:textColorHint="@color/grey_800"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.MaterialComponents.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="@dimen/_5sdp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hintlabel">
+
+            <com.wee3ventures.fontier.FontView
+                    android:id="@+id/inputlabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_15sdp"
+                    android:textColor="@color/grey_800"
+                    android:textSize="@dimen/_18sdp"
+                    app:fontName="Poppins_Regular"
+                    tools:text="@string/app_name" />
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

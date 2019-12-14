@@ -38,21 +38,54 @@
         <attr name="female_icon" format="integer|reference"/>
         <attr name="male_text" format="reference|string"/>
         <attr name="female_text" format="reference|string"/>
-        <attr name="font_type" format="reference"/>
+        <attr name="genderfont"/>
         <attr name="male_selected" format="boolean"/>
         <attr name="female_selected" format="boolean"/>
         <attr name="android:hint"/>
+        <attr name="android:textSize"/>
+        <attr name="hint_Colour" format="color|reference"/>
+        <attr name="text_Colour" format="color|reference"/>
+        <attr name="genderHintSize" format="dimension|reference"/>
         <attr name="is_hint" format="boolean"/>
     </declare-styleable>
 
     <declare-styleable name="FontCard">
         <attr name="hint_needed" format="boolean"/>
         <attr name="is_aadhar" format="boolean"/>
-        <attr name="input_label" format="string|reference"/>
+        <attr name="isHint" format="boolean"/>
+        <attr name="isAadhar" format="boolean"/>
         <attr name="android:hint"/>
         <attr name="android:text"/>
-        <attr name="font_face" format="integer|reference"/>
-        <attr name="text_color" format="color|reference"/>
-        <attr name="hint_color" format="color|reference"/>
+        <attr name="android:textSize"/>
+        <attr name="textColour" format="reference|color"/>
+        <attr name="hintColour" format="color|reference"/>
+        <attr name="hintSize" format="dimension|reference"/>
+        <attr name="fontype"/>
     </declare-styleable>
+
+    <attr name="genderfont" format="enum">
+        <enum name="Poppins_Regular" value="1"/>
+        <enum name="Poppins_Light" value="2"/>
+        <enum name="Poppins_ExtraLight" value="3"/>
+        <enum name="Poppins_Bold" value="4"/>
+        <enum name="Poppins_Medium" value="5"/>
+        <enum name="MerrieWeather_Regular" value="6"/>
+        <enum name="MerrieWeather_Bold" value="7"/>
+        <enum name="MerrieWeather_Light" value="8"/>
+        <enum name="Dayrom" value="9"/>
+        <enum name="DayromX" value="10"/>
+    </attr>
+
+    <attr name="fontype" format="enum">
+        <enum name="Poppins_Regular" value="1"/>
+        <enum name="Poppins_Light" value="2"/>
+        <enum name="Poppins_ExtraLight" value="3"/>
+        <enum name="Poppins_Bold" value="4"/>
+        <enum name="Poppins_Medium" value="5"/>
+        <enum name="MerrieWeather_Regular" value="6"/>
+        <enum name="MerrieWeather_Bold" value="7"/>
+        <enum name="MerrieWeather_Light" value="8"/>
+        <enum name="Dayrom" value="9"/>
+        <enum name="DayromX" value="10"/>
+    </attr>
 </resources>

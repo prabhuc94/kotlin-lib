@@ -3,8 +3,10 @@ package com.wee3ventures.fontier
 import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
+import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
+import android.view.inputmethod.EditorInfo
 import android.widget.ImageView
 import android.widget.LinearLayout
 import com.wee3ventures.fontier.`interface`.GenderListener
@@ -24,7 +26,7 @@ class GenderCard : LinearLayout {
     constructor(context: Context?) : super(context) { initView(context,null) }
     constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs) { initView(context, attrs) }
 
-    @SuppressLint("Recycle")
+    @SuppressLint("Recycle", "ResourceAsColor")
     private fun initView(context: Context?, attributeSet: AttributeSet?){
         val a = context?.obtainStyledAttributes(attributeSet,R.styleable.GenderCard)
         val view = (context?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater).inflate(R.layout.layout_gender_color,this,true)
@@ -41,13 +43,46 @@ class GenderCard : LinearLayout {
         //a?.getInteger(R.styleable.GenderCard_font_type, EditorInfo.TYPE_NULL)?.let { setFont(it) }
         //a?.getResourceId(R.styleable.GenderCard_male_icon,0)?.let { setMaleIcon(resources.getDrawable(it)) }
         //a?.getResourceId(R.styleable.GenderCard_female_icon,0)?.let { setFemaleIcon(resources.getDrawable(it)) }
+        a?.getDimensionPixelSize(R.styleable.GenderCard_android_textSize,16)?.let { setTextSize(convertPixelsToDp(it.toFloat(),context)) }
+        a?.getDimensionPixelSize(R.styleable.GenderCard_genderHintSize,13)?.let { setHintSize(convertPixelsToDp(it.toFloat(),context)) }
         a?.getString(R.styleable.GenderCard_male_text)?.let { setMaleLabel(it) }
         a?.getString(R.styleable.GenderCard_female_text)?.let { setFemaleLabel(it) }
         a?.getString(R.styleable.GenderCard_android_hint)?.let { sethint(it) }
         a?.getBoolean(R.styleable.GenderCard_is_hint, false)?.let { isHint(it) }
+        a?.getInteger(R.styleable.GenderCard_genderfont,EditorInfo.TYPE_NULL)?.let { setFont(it) }
+        a?.getColor(R.styleable.GenderCard_text_Colour,R.color.grey_800)?.let { setTextColor(it) }
+        a?.getColor(R.styleable.GenderCard_hint_Colour,R.color.grey_500)?.let { setHintColor(it) }
 
         onClicker()
         a?.recycle()
+    }
+
+    fun convertPixelsToDp(px: Float, context: Context): Float {
+        return px / (context.resources.displayMetrics.densityDpi.toFloat() / DisplayMetrics.DENSITY_DEFAULT)
+    }
+
+    fun setTextSize(size : Float){
+        if (malelabel != null && femalelabel != null) {
+            malelabel?.textSize = size ; femalelabel?.textSize = size
+        }
+    }
+
+    fun setHintSize(size: Float){
+        if (hintlabel != null)
+            hintlabel?.textSize = size
+    }
+
+    fun setHintColor(colorId : Int){
+        if (hintlabel != null){
+            hintlabel?.setTextColor(resources.getColor(colorId))
+        }
+    }
+
+    fun setTextColor(colorId : Int){
+        if (malelabel != null && femalelabel != null){
+            malelabel?.setTextColor(resources.getColor(colorId))
+            femalelabel?.setTextColor(resources.getColor(colorId))
+        }
     }
 
     private fun onClicker(){
@@ -121,7 +156,7 @@ class GenderCard : LinearLayout {
 
     fun sethint(hint : String){
         if (hintlabel != null){
-            hintlabel?.hint = hint
+            hintlabel?.text = hint
         }
     }
 
