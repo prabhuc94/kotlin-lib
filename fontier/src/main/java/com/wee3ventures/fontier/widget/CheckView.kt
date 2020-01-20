@@ -56,15 +56,15 @@ class CheckView : ConstraintLayout {
                 }
             }
         if (tickMark != null && tickMark != 0) {
-            val tickSrc = resources.getDrawable(tickMark!!)
+            val tickSrc = resources.getDrawable(tickMark)
             setTick(tickSrc)
         }
         if (iconSrc != null && iconSrc != 0) {
-            val iconDrawable = resources.getDrawable(iconSrc!!)
+            val iconDrawable = resources.getDrawable(iconSrc)
             setIcon(iconDrawable)
         }
         if (iconBackground != null && iconBackground != 0) {
-            val backSrc = resources.getDrawable(iconBackground!!)
+            val backSrc = resources.getDrawable(iconBackground)
             setIconBackground(backSrc)
         }
 
@@ -92,15 +92,7 @@ class CheckView : ConstraintLayout {
 
     fun setIcon(inputIcon : Any){
         if (icon != null) {
-            GlideApp.with(this.context)
-                .load(inputIcon)
-                .into(icon!!)
-        }
-    }
-
-    fun setIcon(inputIcon : Drawable){
-        if (icon != null) {
-            GlideApp.with(this.context)
+            GlideApp.with(context)
                 .load(inputIcon)
                 .into(icon!!)
         }
@@ -108,15 +100,7 @@ class CheckView : ConstraintLayout {
 
     fun setTick(tickIcon : Any){
         if (tick != null) {
-            GlideApp.with(this.context)
-                .load(tickIcon)
-                .into(tick!!)
-        }
-    }
-
-    fun setTick(tickIcon : Drawable){
-        if (tick != null) {
-            GlideApp.with(this.context)
+            GlideApp.with(context)
                 .load(tickIcon)
                 .into(tick!!)
         }

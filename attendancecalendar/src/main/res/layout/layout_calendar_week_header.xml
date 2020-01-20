@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/daysContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:tag="dayOfTheWeekLayout1">
+
+        <com.wee3ventures.fontier.FontView
+                style="@style/RobotoCalendarDayOfTheWeekText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:fontName="Poppins_ExtraLight"
+                android:tag="dayOfTheWeekText1"
+                tools:text="Mon" />
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:tag="dayOfTheWeekLayout2">
+
+        <com.wee3ventures.fontier.FontView
+                style="@style/RobotoCalendarDayOfTheWeekText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:fontName="Poppins_ExtraLight"
+                android:tag="dayOfTheWeekText2"
+                tools:text="Tue" />
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:tag="dayOfTheWeekLayout3">
+
+        <com.wee3ventures.fontier.FontView
+                style="@style/RobotoCalendarDayOfTheWeekText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:fontName="Poppins_ExtraLight"
+                android:tag="dayOfTheWeekText3"
+                tools:text="Wed" />
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:tag="dayOfTheWeekLayout4">
+
+        <com.wee3ventures.fontier.FontView
+                style="@style/RobotoCalendarDayOfTheWeekText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:fontName="Poppins_ExtraLight"
+                android:tag="dayOfTheWeekText4"
+                tools:text="Thu" />
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:tag="dayOfTheWeekLayout5">
+
+        <com.wee3ventures.fontier.FontView
+                style="@style/RobotoCalendarDayOfTheWeekText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:fontName="Poppins_ExtraLight"
+                android:tag="dayOfTheWeekText5"
+                tools:text="Fri" />
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:tag="dayOfTheWeekLayout6">
+
+        <com.wee3ventures.fontier.FontView
+                style="@style/RobotoCalendarDayOfTheWeekText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:fontName="Poppins_ExtraLight"
+                android:tag="dayOfTheWeekText6"
+                tools:text="Sat" />
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:tag="dayOfTheWeekLayout7">
+
+        <com.wee3ventures.fontier.FontView
+                style="@style/RobotoCalendarDayOfTheWeekText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:fontName="Poppins_ExtraLight"
+                android:tag="dayOfTheWeekText7"
+                tools:text="Sun" />
+    </LinearLayout>
+</LinearLayout>

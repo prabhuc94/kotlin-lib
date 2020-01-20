@@ -4,6 +4,7 @@ import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationChannelGroup
 import android.app.NotificationManager
+import android.app.PendingIntent
 import android.content.Context
 import android.os.Build
 import androidx.annotation.Nullable
@@ -48,23 +49,27 @@ class Notification (private val mContext: Context) {
         }
     }
 
-    fun showNotification(title : String, message : String,notifyId: Int,@Nullable autoCancel : Boolean = true, smallIcon : Int){
+    fun showNotification(title : String, message : String,notifyId: Int,@Nullable autoCancel : Boolean = true, smallIcon : Int, intent : PendingIntent ?= null){
         val notification = NotificationCompat.Builder(mContext)
             .setContentTitle(title)
             .setStyle(NotificationCompat.BigTextStyle().bigText(message))
             .setAutoCancel(autoCancel)
             .setSmallIcon(smallIcon)
             .setBadgeIconType(NotificationCompat.BADGE_ICON_LARGE)
+        if (intent != null){
+            notification.setContentIntent(intent)
+        }
         notificationManager?.notify(notifyId, notification.build())
     }
 
-    fun showNotification(title : String, message : String, summaryChannelId : String, notificationChannelId : String){
+    fun showNotification(title : String, message : String, summaryChannelId : String, notificationChannelId : String, smallIcon : Int,intent : PendingIntent ?= null){
         val bundle_notification_id = "bundle_notification_$bundleNotificationId"
         summaryNotificationBuilder = NotificationCompat.Builder(mContext, summaryChannelId)
             .setGroup(bundle_notification_id)
             .setGroupSummary(true)
             .setContentTitle(title)
             .setStyle(NotificationCompat.BigTextStyle().bigText(message))
+            .setSmallIcon(smallIcon)
 
         if (singleNotificationId == bundleNotificationId)
             singleNotificationId = System.currentTimeMillis().toInt()
@@ -77,7 +82,11 @@ class Notification (private val mContext: Context) {
             .setStyle(NotificationCompat.BigTextStyle().bigText(message))
             .setGroupSummary(false)
             .setAutoCancel(true)
+            .setSmallIcon(smallIcon)
             .setBadgeIconType(NotificationCompat.BADGE_ICON_LARGE)
+        if (intent != null){
+            notification.setContentIntent(intent)
+        }
 
         notificationManager?.notify(singleNotificationId, notification.build())
         notificationManager?.notify(bundleNotificationId, summaryNotificationBuilder!!.build())

@@ -292,4 +292,24 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
+
+    <style name="RobotoCalendarMonthText">
+        <item name="android:textSize">@dimen/_16sdp</item>
+        <item name="android:textColor">@color/roboto_calendar_month_font</item>
+    </style>
+
+    <style name="RobotoCalendarMonthArrow">
+        <item name="android:tint">@color/roboto_calendar_month_arrow</item>
+    </style>
+
+    <style name="RobotoCalendarDayOfTheWeekText">
+        <item name="android:textSize">@dimen/_16sdp</item>
+        <item name="android:textColor">@color/roboto_calendar_day_of_the_month_font</item>
+    </style>
+
+    <style name="RobotoCalendarDayOfTheMonthText">
+        <item name="android:textSize">@dimen/_16sdp</item>
+        <item name="android:textColor">@color/roboto_calendar_day_of_the_month_font</item>
+    </style>
+
 </resources>
