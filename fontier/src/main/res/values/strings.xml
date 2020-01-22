@@ -54,5 +54,10 @@
     <string name="check_username_for_set_password_n_small_if_username_available_you_will_refirect_to_set_password_page_small"><![CDATA[Check username for set password. If username available you will redirect to set password page]]></string>
     <string name="set_password">Set Password</string>
     <string name="set_the_password_to_complete_the_process">Set the password to complete the process</string>
+    <string name="clear">Clear</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="verify_your_number">Verify Your Number</string>
+    <string name="verify_msg">Please enter your mobile number to receive a verification code</string>
+    <string name="your_phone_number">Your Phone Number</string>
 
 </resources>

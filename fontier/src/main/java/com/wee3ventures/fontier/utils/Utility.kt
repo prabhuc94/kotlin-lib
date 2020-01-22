@@ -22,4 +22,7 @@ object Utility {
         return retVal.toString()
     }
 
+    fun removeLastChar(str: String): String? {
+        return str.substring(0, str.length - 1)
+    }
 }

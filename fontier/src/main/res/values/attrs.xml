@@ -88,4 +88,10 @@
         <enum name="Dayrom" value="9"/>
         <enum name="DayromX" value="10"/>
     </attr>
+
+    <declare-styleable name="Keyboard">
+        <attr name="tintColor" format="color|reference"/>
+        <attr name="dividerColor" format="color|reference"/>
+        <attr name="backgroundColor" format="color|reference"/>
+    </declare-styleable>
 </resources>

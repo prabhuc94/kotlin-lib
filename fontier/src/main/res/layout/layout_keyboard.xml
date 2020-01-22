@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/key_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@android:color/transparent"
+        android:orientation="vertical"
+        android:showDividers="middle|beginning|end">
+
+    <TableRow
+            android:id="@+id/key_row_1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:divider="@android:color/transparent"
+            android:gravity="center"
+            android:showDividers="middle" >
+
+        <com.wee3ventures.fontier.FontView
+                android:id="@+id/key_1"
+                style="@style/anti_theft_t9_key"
+                android:text="1"
+                app:fontName="Poppins_Medium"
+                android:textIsSelectable="false" />
+
+        <com.wee3ventures.fontier.FontView
+                android:id="@+id/key_2"
+                style="@style/anti_theft_t9_key"
+                android:text="2"
+                app:fontName="Poppins_Medium"
+                android:textIsSelectable="false" />
+
+        <com.wee3ventures.fontier.FontView
+                android:id="@+id/key_3"
+                style="@style/anti_theft_t9_key"
+                android:text="3"
+                app:fontName="Poppins_Medium"
+                android:textIsSelectable="false" />
+    </TableRow>
+
+    <TableRow
+            android:id="@+id/key_row_2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:divider="@android:color/transparent"
+            android:gravity="center"
+            android:showDividers="middle" >
+
+        <com.wee3ventures.fontier.FontView
+                android:id="@+id/key_4"
+                style="@style/anti_theft_t9_key"
+                android:text="4"
+                app:fontName="Poppins_Medium"
+                android:textIsSelectable="false" />
+
+        <com.wee3ventures.fontier.FontView
+                android:id="@+id/key_5"
+                style="@style/anti_theft_t9_key"
+                android:text="5"
+                app:fontName="Poppins_Medium"
+                android:textIsSelectable="false" />
+
+        <com.wee3ventures.fontier.FontView
+                android:id="@+id/key_6"
+                style="@style/anti_theft_t9_key"
+                android:text="6"
+                app:fontName="Poppins_Medium"
+                android:textIsSelectable="false" />
+    </TableRow>
+
+    <TableRow
+            android:id="@+id/key_row_3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:divider="@android:color/transparent"
+            android:gravity="center"
+            android:showDividers="middle" >
+
+        <com.wee3ventures.fontier.FontView
+                android:id="@+id/key_7"
+                style="@style/anti_theft_t9_key"
+                android:text="7"
+                app:fontName="Poppins_Medium"
+                android:textIsSelectable="false" />
+
+        <com.wee3ventures.fontier.FontView
+                android:id="@+id/key_8"
+                style="@style/anti_theft_t9_key"
+                android:text="8"
+                app:fontName="Poppins_Medium"
+                android:textIsSelectable="false" />
+
+        <com.wee3ventures.fontier.FontView
+                android:id="@+id/key_9"
+                style="@style/anti_theft_t9_key"
+                android:text="9"
+                app:fontName="Poppins_Medium"
+                android:textIsSelectable="false" />
+    </TableRow>
+
+    <TableRow
+            android:id="@+id/key_row_4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:divider="@android:color/transparent"
+            android:gravity="center"
+            android:showDividers="middle" >
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/key_clear"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:text="@string/clear"
+                android:textSize="@dimen/_14sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/grey_600"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textIsSelectable="false" />
+
+        <com.wee3ventures.fontier.FontView
+                android:id="@+id/key_0"
+                style="@style/anti_theft_t9_key"
+                android:text="0"
+                app:fontName="Poppins_Medium"
+                android:textIsSelectable="false" />
+
+        <ImageView
+                android:id="@+id/key_backspace"
+                style="@style/anti_theft_t9_key"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_backspace"
+                android:tint="@color/grey_600"
+                android:adjustViewBounds="true"
+                android:scaleType="center"
+                android:textIsSelectable="false" />
+    </TableRow>
+
+</TableLayout>
