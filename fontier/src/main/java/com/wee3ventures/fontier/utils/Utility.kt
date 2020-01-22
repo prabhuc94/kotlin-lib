@@ -25,4 +25,8 @@ object Utility {
     fun removeLastChar(str: String): String? {
         return str.substring(0, str.length - 1)
     }
+
+    fun otpMsgWithNo(mobileNumber : Any) : Any{
+        return "Please type the verification code sent to $mobileNumber"
+    }
 }

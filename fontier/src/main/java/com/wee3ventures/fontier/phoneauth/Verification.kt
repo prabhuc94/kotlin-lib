@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.wee3ventures.fontier.R
 
-class Registration : DialogFragment() {
+class Verification : DialogFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_mobile_registration,container,false)
+        return inflater.inflate(R.layout.fragment_mobile_otp_verification,container,false)
     }
 }

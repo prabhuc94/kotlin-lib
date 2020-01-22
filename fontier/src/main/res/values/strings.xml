@@ -59,5 +59,6 @@
     <string name="verify_your_number">Verify Your Number</string>
     <string name="verify_msg">Please enter your mobile number to receive a verification code</string>
     <string name="your_phone_number">Your Phone Number</string>
+    <string name="verification_code">Verification Code</string>
 
 </resources>
