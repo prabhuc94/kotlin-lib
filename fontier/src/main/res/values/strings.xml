@@ -60,5 +60,8 @@
     <string name="verify_msg">Please enter your mobile number to receive a verification code</string>
     <string name="your_phone_number">Your Phone Number</string>
     <string name="verification_code">Verification Code</string>
+    <string name="confirmation">Confirmation</string>
+    <string name="resend_code">Resend Code</string>
+    <string name="confirm">Confirm</string>
 
 </resources>

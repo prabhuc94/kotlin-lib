@@ -1,5 +1,7 @@
 package com.wee3ventures.fontier.utils
 
+import android.text.Editable
+import android.text.Html
 import android.view.View
 import androidx.appcompat.widget.TooltipCompat
 
@@ -29,4 +31,8 @@ object Utility {
     fun otpMsgWithNo(mobileNumber : Any) : Any{
         return "Please type the verification code sent to $mobileNumber"
     }
+
+    fun editable (input : Any) : Editable = Editable.Factory.getInstance().newEditable("$input")
+
+    fun htmlValue (input : Any, input1 : Any) : String = Html.fromHtml("<small>$input</small>  <small>(</small> <b>$input1</b> <small>)</small>").toString()
 }
