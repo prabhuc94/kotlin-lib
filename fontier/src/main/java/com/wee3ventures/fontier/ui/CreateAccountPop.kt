@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.wee3ventures.fontier.R
 import com.wee3ventures.fontier.`interface`.CreateListener
+import com.wee3ventures.fontier.utils.Validator
 import kotlinx.android.synthetic.main.activity_create_account.*
+import kotlinx.android.synthetic.main.activity_create_account.userPass
 
 class CreateAccountPop (val listener : CreateListener) : DialogFragment(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +29,19 @@ class CreateAccountPop (val listener : CreateListener) : DialogFragment(), View.
             dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
         }
         setUtility()
+        userLayout.tag = "Username"
+        phoneLayout.tag = "Phone"
+        mailLayout.tag = "Email"
+
+        userName.tag = "Username"
+        phoneTxt.tag = "Phone"
+        mailTxt.tag = "Email"
+
+        Validator.textWatcher(passLayout,userPass,errorMessage = Validator.EMPTY_FIELD_MESSAGE)
+        Validator.textWatcher(confPassLayout,confPass,errorMessage = Validator.EMPTY_FIELD_MESSAGE)
+        Validator.textWatcher(userLayout,userName,errorMessage = Validator.EMPTY_FIELD_MESSAGE)
+        Validator.textWatcher(phoneLayout,phoneTxt,errorMessage = Validator.EMPTY_FIELD_MESSAGE)
+        Validator.textWatcher(mailLayout,mailTxt,pattern = Validator.EMAIL_PATTERN, errorMessage = Validator.EMPTY_FIELD_MESSAGE)
     }
 
     @Suppress("SENSELESS_COMPARISON")
@@ -39,7 +54,8 @@ class CreateAccountPop (val listener : CreateListener) : DialogFragment(), View.
     override fun onClick(v: View?) {
         when(v?.id){
             R.id.signUpBtn -> {
-                checkPass()
+                passCheck()
+                if (checkViews()) listener.onSignUp(username = "${userName.text}",userMail = "${mailTxt.text}", userPhone = "${phoneTxt.text}",userPass = "${userPass.text}", dialog = this)
             }
 
             R.id.signinBtn -> {
@@ -52,16 +68,18 @@ class CreateAccountPop (val listener : CreateListener) : DialogFragment(), View.
         }
     }
 
-    private fun checkPass(){
-        val password = "${confPass.text}"
-        val confirmPass = "${confPass.text}"
-        if (password == confirmPass){
+    private fun checkViews() : Boolean = userName.text.isNullOrEmpty().not() && mailTxt.text.isNullOrEmpty().not() &&
+            Validator.isValidEmail("${mailTxt.text}") && phoneTxt.text.isNullOrEmpty().not() &&
+            Validator.isValidMobile("${phoneTxt.text}") &&
+            userPass.text.isNullOrEmpty().not() && confPass.text.isNullOrEmpty().not()
+            && "${userPass.text}".equals("${confPass.text}")
+
+    private fun passCheck(){
+        if ("${userPass.text}".equals("${confPass.text}")){
             confPassLayout.isErrorEnabled = false
-            listener.onSignUp(username = "${userName.text}",userMail = "${mailTxt.text}",userPass = "${userPass.text}", dialog = this)
         } else {
             confPassLayout.isErrorEnabled = true
-            confPassLayout.error = "Password Mismatch"
+            confPassLayout.error = Validator.PASSWORD_MISMATCH
         }
     }
-
 }

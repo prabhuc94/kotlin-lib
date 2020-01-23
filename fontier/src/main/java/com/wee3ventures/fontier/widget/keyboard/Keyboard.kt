@@ -154,7 +154,7 @@ class Keyboard : TableLayout, View.OnClickListener {
 
     //Deappending the Value to the LastValue
     private fun deappend() : Any?{
-        if (lastValue != null) {
+        if ("$lastValue".isNullOrEmpty().not()) {
             this.lastValue = Utility.removeLastChar("$lastValue")
         }
         return this.lastValue

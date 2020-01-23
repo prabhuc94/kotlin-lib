@@ -20,6 +20,13 @@ internal class DataBindingAdapter {
                 .into(imageView)
         }
 
+        @JvmStatic @BindingAdapter("imagePath") fun viewImage(imageView: ImageView, imagePath: Any) {
+            Glide.with(imageView.context)
+                .load(imagePath)
+                .thumbnail(0.1f)
+                .into(imageView)
+        }
+
         @Suppress("UNCHECKED_CAST")
         @BindingAdapter("replaceAll")
         @JvmStatic
