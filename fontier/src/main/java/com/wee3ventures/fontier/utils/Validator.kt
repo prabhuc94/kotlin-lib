@@ -1,6 +1,7 @@
 package com.wee3ventures.fontier.utils
 
 import android.text.Editable
+import android.text.TextUtils
 import android.text.TextWatcher
 import android.util.Patterns
 import com.google.android.material.textfield.TextInputEditText
@@ -41,18 +42,16 @@ object Validator {
         return Pattern.compile(pattern).matcher(input).matches()
     }
 
-    val mailWatcher : TextWatcher = object : TextWatcher{
-        override fun afterTextChanged(s: Editable?) {
-            val data = s.toString()
+    fun isEmpty(input : String) : Boolean{
+        return TextUtils.isEmpty(input.trim())
+    }
 
-        }
+    fun isEmpty(input : TextInputLayout) : Boolean{
+        return TextUtils.isEmpty(input.editText?.text?.toString()?.trim())
+    }
 
-        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-        }
-
-        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-        }
-
+    fun isEmpty(input : TextInputEditText) : Boolean{
+        return TextUtils.isEmpty(input.text.toString().trim())
     }
 
     fun textWatcher(textInputLayout : TextInputLayout, textInputEditText: TextInputEditText, pattern: String ?= null , errorMessage : String ? = EMPTY_FIELD_MESSAGE){
@@ -69,7 +68,7 @@ object Validator {
                     } else {
                         when (textInputEditText.tag) {
                             "Username", "name", "Name" -> {
-                                if (data.isNullOrEmpty()) {
+                                if (data.isEmpty()) {
                                     textInputLayout.isErrorEnabled = true; textInputLayout.error = EMPTY_FIELD_MESSAGE
                                 } else textInputLayout.isErrorEnabled = false
                             }
@@ -111,7 +110,7 @@ object Validator {
                     } else {
                         when (textInputLayout.editText?.tag) {
                             "Username", "name", "Name" -> {
-                                if (data.isNullOrEmpty()) {
+                                if (data.isEmpty()) {
                                     textInputLayout.isErrorEnabled = true; textInputLayout.error = EMPTY_FIELD_MESSAGE
                                 } else textInputLayout.isErrorEnabled = false
                             }
@@ -178,6 +177,26 @@ object Validator {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
             }
 
-        }) }
+        })
+        }
+    }
+
+    fun emptyWatcher(view: TextInputLayout, errorMessage : String ?= EMPTY_FIELD_MESSAGE){
+        view.editText?.addTextChangedListener( object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                if (TextUtils.isEmpty(s.toString().trim())){
+                    view.isErrorEnabled = true
+                    view.error = errorMessage
+                } else {
+                    view.isErrorEnabled = false
+                }
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+        }  )
     }
 }
