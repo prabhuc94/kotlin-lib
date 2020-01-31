@@ -75,14 +75,14 @@ class OcrGraphic : Graphic {
         rect.top = translateY(rect.top)
         rect.right = translateX(rect.right)
         rect.bottom = translateY(rect.bottom)
-        canvas?.drawRect(rect, sRectPaint)
+        //canvas?.drawRect(rect,sRectPaint)
         // Break the text into multiple lines and draw each one according to its own bounding box.
         val textComponents =
             text.components
         for (currentText in textComponents) {
             val left: Float = translateX(currentText.boundingBox.left.toFloat())
             val bottom: Float = translateY(currentText.boundingBox.bottom.toFloat())
-            canvas?.drawText(currentText.value, left, bottom, sTextPaint)
+            sTextPaint?.let { canvas?.drawText(currentText.value, left, bottom, it) }
         }
     }
 }

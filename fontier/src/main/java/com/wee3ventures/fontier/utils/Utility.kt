@@ -20,13 +20,16 @@ object Utility {
         if ("$s".length <= num) { //String to small, do nothing
             return s
         }
-        val retVal: StringBuilder = StringBuilder(s)
-        var i = retVal.length
-        while (i > 0) {
-            retVal.insert(i, t)
-            i -= num
+        val retVal = s?.let { StringBuilder(it) }
+        if (retVal != null) {
+            var i = retVal.length
+            while (i > 0) {
+                retVal.insert(i, t)
+                i -= num
+            }
+            return retVal.toString()
         }
-        return retVal.toString()
+        return null
     }
 
     fun removeLastChar(str: String): String? {
@@ -46,10 +49,10 @@ object Utility {
         dialog.setCancelable(cancelable!!)
         dialog.setCanceledOnTouchOutside(cancelable!!) // Disable the cancel if user click outside of the popup/dialog
         dialog.setContentView(inflatedView) // add the desired view
-        dialog.window.setLayout(width!!,height!!) // It'll help to occupy the required screen size
-        dialog.window.addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND) // This will Make non accessible previous screen for other than Popup view
-        dialog.window.setGravity(Gravity.CENTER) // This will make it appear the Popup in TOP
-        dialog.window.setBackgroundDrawableResource(backgroundColor!!) // It'll make the Dialog background as Transparent
+        dialog.window?.setLayout(width!!,height!!) // It'll help to occupy the required screen size
+        dialog.window?.addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND) // This will Make non accessible previous screen for other than Popup view
+        dialog.window?.setGravity(Gravity.CENTER) // This will make it appear the Popup in TOP
+        dialog.window?.setBackgroundDrawableResource(backgroundColor!!) // It'll make the Dialog background as Transparent
         dialog.show()
     }
 
@@ -57,10 +60,10 @@ object Utility {
         dialog.setCancelable(cancelable!!)
         dialog.setCanceledOnTouchOutside(cancelable!!) // Disable the cancel if user click outside of the popup/dialog
         dialog.setContentView(inflatedView) // add the desired view
-        dialog.window.setLayout(width!!,height!!) // It'll help to occupy the required screen size
-        dialog.window.addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND) // This will Make non accessible previous screen for other than Popup view
-        dialog.window.setGravity(Gravity.CENTER) // This will make it appear the Popup in TOP
-        dialog.window.setBackgroundDrawableResource(backgroundColor!!) // It'll make the Dialog background as Transparent
+        dialog.window?.setLayout(width!!,height!!) // It'll help to occupy the required screen size
+        dialog.window?.addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND) // This will Make non accessible previous screen for other than Popup view
+        dialog.window?.setGravity(Gravity.CENTER) // This will make it appear the Popup in TOP
+        dialog.window?.setBackgroundDrawableResource(backgroundColor!!) // It'll make the Dialog background as Transparent
         dialog.show()
     }
 }

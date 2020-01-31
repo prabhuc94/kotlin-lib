@@ -224,7 +224,7 @@ class CircleImage : ImageView {
         initializeBitmap()
     }
 
-    override fun setImageURI(uri: Uri) {
+    override fun setImageURI(uri: Uri?) {
         super.setImageURI(uri)
         initializeBitmap()
     }
@@ -300,7 +300,7 @@ class CircleImage : ImageView {
             return
         }
 
-        mBitmapShader = BitmapShader(mBitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP)
+        mBitmapShader = BitmapShader(mBitmap!!, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP)
 
         mBitmapPaint.isAntiAlias = true
         mBitmapPaint.shader = mBitmapShader

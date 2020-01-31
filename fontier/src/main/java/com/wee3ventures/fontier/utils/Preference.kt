@@ -49,12 +49,12 @@ class Preference {
         editor!!.putStringSet(key,value).commit()
     }
 
-    fun getPrefs(key: String, defValue : String) : String{
-        return sharedPreferences!!.getString(key,defValue)
+    fun getPrefs(key: String, defValue : String) : String {
+        return sharedPreferences!!.getString(key,defValue)!!
     }
 
     fun getPrefs(key: String, defValue : MutableSet<String>) : MutableSet<String>{
-        return sharedPreferences!!.getStringSet(key,defValue)
+        return sharedPreferences!!.getStringSet(key,defValue)!!
     }
 
     fun getPrefs(key: String, defValue : Int) : Int{
