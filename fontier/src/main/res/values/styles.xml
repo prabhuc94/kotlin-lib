@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="GDOTheme" parent="Theme.MaterialComponents.DayNight.Dialog">
+    <style name="GDOTheme" parent="Theme.MaterialComponents.Light.Dialog">
         <item name="android:windowNoTitle">true</item>
         <item name="colorPrimaryDark">#3F51B5</item>
         <item name="colorPrimary">#6474D5</item>

@@ -2,12 +2,13 @@
 
 package com.wee3ventures.fontier.ui.toaster
 
+
+import android.app.Activity
 import android.content.Context
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.android.material.snackbar.Snackbar
 import com.wee3ventures.fontier.Enumaration.Fonts
 
@@ -70,7 +71,7 @@ object Message{
     }
 
     fun snackbar(mContext: Context, message: String,textSize : Float ?= 16f, maxLines : Int ?= 3,mFonts : Fonts? = Fonts.POPPINS_REGULAR, duration: Int? = Snackbar.LENGTH_LONG){
-        val snackbar = duration?.let { Snackbar.make(ConstraintLayout(mContext), message, it) }
+        val snackbar = duration?.let { Snackbar.make( (mContext as Activity).findViewById(android.R.id.content) , message, it) }
         ( snackbar?.view?.findViewById(com.google.android.material.R.id.snackbar_text) as TextView ).apply {
             this.textSize = textSize!!
             this.maxLines = maxLines!!
