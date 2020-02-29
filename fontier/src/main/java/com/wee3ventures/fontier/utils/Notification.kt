@@ -94,7 +94,7 @@ class Notification (private val mContext: Context) {
     }
 
     @Suppress("SENSELESS_COMPARISON")
-    fun showProgressNotification(title : String, message : String, @Nullable progress : Int? = null, progressChannelId : String){
+    fun showProgressNotification(title : String, message : String, @Nullable progress : Int? = null, smallIcon: Int, progressChannelId : String){
         cancelNotification()
         val notification = NotificationCompat.Builder(mContext, progressChannelId)
             .setContentTitle(title)
@@ -102,6 +102,7 @@ class Notification (private val mContext: Context) {
             .setStyle(NotificationCompat.BigTextStyle().bigText(message))
             .setGroupSummary(false)
             .setAutoCancel(true)
+            .setSmallIcon(smallIcon)
             .setBadgeIconType(NotificationCompat.BADGE_ICON_LARGE)
         if (progress != 0 || progress != null){
             notification.setProgress(100,progress!!,false)

@@ -64,5 +64,6 @@
     <string name="resend_code">Resend Code</string>
     <string name="confirm">Confirm</string>
     <string name="phone_number">Phone Number</string>
+    <string name="usericon">usericon</string>
 
 </resources>

@@ -1,61 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                                   android:layout_width="match_parent"
-                                                   android:layout_height="@dimen/_50sdp"
-                                                   android:id="@+id/checker"
-                                                   android:background="?selectableItemBackground"
-                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
-                                                   xmlns:tools="http://schemas.android.com/tools">
-    <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/iconView"
-            android:layout_width="@dimen/_50sdp"
-            android:layout_height="@dimen/_50sdp"
-            tools:src="@tools:sample/avatars"
-            app:civ_circle_background_color="@color/white"
-            app:civ_border_width="@dimen/_2sdp"
-            app:civ_border_color="@color/white"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:contentDescription="@string/contentdescription" />
-
-    <com.wee3ventures.fontier.FontView
-            android:id="@+id/textlabel"
-            android:layout_width="0dp"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/checker"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:padding="@dimen/_10sdp"
-            android:hint="@string/contentdescription"
-            app:fontName="Poppins_Medium"
-            app:layout_constraintBottom_toBottomOf="@+id/iconView"
-            app:layout_constraintEnd_toStartOf="@+id/underDescription"
-            app:layout_constraintStart_toEndOf="@+id/iconView"
-            app:layout_constraintTop_toTopOf="@+id/iconView" />
+            android:background="?selectableItemBackground">
 
-    <com.wee3ventures.fontier.FontView
-            android:id="@+id/underDescription"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/contentdescription"
-            android:textSize="@dimen/_10sdp"
-            app:fontName="Poppins_ExtraLight"
-            app:layout_constraintBottom_toBottomOf="@+id/textlabel"
-            app:layout_constraintEnd_toEndOf="parent"/>
+        <androidx.cardview.widget.CardView
+                android:id="@+id/iconHolder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_30sdp"
+                app:cardElevation="@dimen/_5sdp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-            android:id="@+id/checkMark"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:maxWidth="@dimen/_15sdp"
-            android:maxHeight="@dimen/_15sdp"
-            android:adjustViewBounds="true"
-            app:layout_constraintBottom_toBottomOf="@+id/textlabel"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:src="@tools:sample/backgrounds/scenic"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toTopOf="@+id/textlabel"
-            android:layout_marginRight="8dp"
-            android:layout_marginEnd="8dp"
-            android:contentDescription="@string/contentdescription"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                    android:id="@+id/iconView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/usericon"
+                    android:maxWidth="@dimen/_50sdp"
+                    android:maxHeight="@dimen/_50sdp"
+                    tools:src="@tools:sample/avatars" />
+        </androidx.cardview.widget.CardView>
+
+        <com.wee3ventures.fontier.FontView
+                android:id="@+id/textlabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                tools:hint="@string/contentdescription"
+                android:padding="@dimen/_10sdp"
+                app:fontName="Poppins_Medium"
+                app:layout_constraintBottom_toBottomOf="@+id/iconHolder"
+                app:layout_constraintEnd_toStartOf="@+id/underDescription"
+                app:layout_constraintStart_toEndOf="@+id/iconHolder"
+                app:layout_constraintTop_toTopOf="@+id/iconHolder" />
+
+        <com.wee3ventures.fontier.FontView
+                android:id="@+id/underDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:hint="@string/contentdescription"
+                android:textSize="@dimen/_10sdp"
+                app:fontName="Poppins_ExtraLight"
+                app:layout_constraintBottom_toBottomOf="@+id/textlabel"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+                android:id="@+id/checkMark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/contentdescription"
+                android:maxWidth="@dimen/_15sdp"
+                android:maxHeight="@dimen/_15sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/textlabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textlabel"
+                tools:src="@tools:sample/backgrounds/scenic" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

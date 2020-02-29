@@ -11,5 +11,6 @@ enum class Fonts {
     POPPINS_LIGHT,
     DAYROM_REGULAR,
     DAYROM_X,
-
+    LANCELOT,
+    MARION,
 }

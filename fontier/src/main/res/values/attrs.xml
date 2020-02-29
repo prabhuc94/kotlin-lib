@@ -23,19 +23,16 @@
     </declare-styleable>
 
     <declare-styleable name="CheckView">
-        <attr name="backgroundView" format="integer|reference"/>
-        <attr name="srcView" format="integer|reference"/>
+        <attr name="srcView" format="reference"/>
+        <attr name="tickView" format="reference"/>
         <attr name="textView" format="string|reference"/>
-        <attr name="tickView" format="integer|reference"/>
         <attr name="subtitle" format="string|reference"/>
         <attr name="is_tick" format="boolean"/>
+        <attr name="srcCorner" format="dimension|reference"/>
     </declare-styleable>
 
     <declare-styleable name="GenderCard">
-        <attr name="bg_selector" format="reference|integer"/>
-        <attr name="font_selector" format="integer|reference"/>
-        <attr name="male_icon" format="reference|integer"/>
-        <attr name="female_icon" format="integer|reference"/>
+        <attr name="bg_selector" format="reference"/>
         <attr name="male_text" format="reference|string"/>
         <attr name="female_text" format="reference|string"/>
         <attr name="genderfont"/>
