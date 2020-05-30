@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.os.Bundle
 import androidx.core.net.toUri
 import java.io.File
 
@@ -15,6 +16,23 @@ object Navigator {
         context.startActivity(intent)
         return true
     }
+
+    inline fun <reified T : Activity> launch(context: Context, keyword: String, value : Any): Boolean {
+        val intent = Intent(context.applicationContext, T::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        intent.putExtra(keyword, "$value")
+        context.startActivity(intent)
+        return true
+    }
+
+    inline fun <reified T : Activity> launch(context: Context, bundle : Bundle): Boolean {
+        val intent = Intent(context.applicationContext, T::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        intent.putExtras(bundle)
+        context.startActivity(intent)
+        return true
+    }
+
     inline fun <reified T : Activity> launch(mContext: Context,comingFrom : String) {
         val intent = Intent(mContext.applicationContext, T::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK

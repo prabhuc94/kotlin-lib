@@ -5,6 +5,8 @@ package com.wee3ventures.fontier.utils
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.wee3ventures.fontier.BuildConfig
 
 @SuppressLint("CommitPrefEdits")
@@ -12,7 +14,7 @@ class Preference {
     private var sharedPreferences : SharedPreferences? = null
     private var editor : SharedPreferences.Editor? = null
     constructor(mContext : Context){
-        sharedPreferences = mContext.getSharedPreferences(BuildConfig.APPLICATION_ID, Context.MODE_PRIVATE)
+        sharedPreferences = mContext.getSharedPreferences(BuildConfig.LIBRARY_PACKAGE_NAME, Context.MODE_PRIVATE)
         editor = sharedPreferences!!.edit()
     }
     constructor(mContext : Context, preferenceName : String){

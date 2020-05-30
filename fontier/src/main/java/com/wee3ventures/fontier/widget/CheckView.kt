@@ -119,5 +119,9 @@ class CheckView : LinearLayout {
         }
     }
 
+    fun title() : String = "${title?.text}"
+
+    fun subtitle() : String = "${subtitle?.text}"
+
 
 }

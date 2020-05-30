@@ -11,7 +11,7 @@ object Console {
         Debug,Error,Info,Warn,Verbose
     }
     @SuppressLint("LogNotTimber")
-    fun log(@Nullable TAG : String = BuildConfig.APPLICATION_ID, @Nullable activity: Activity? = null, message : Any, @Nullable throwable: Throwable? = null, type : LOG = LOG.Error){
+    fun log(@Nullable TAG : String = BuildConfig.LIBRARY_PACKAGE_NAME, @Nullable activity: Activity? = null, message : Any, @Nullable throwable: Throwable? = null, type : LOG = LOG.Error){
         @Suppress("NAME_SHADOWING") val TAG : String? = if (activity != null){
             activity::class.java.simpleName
         } else {
