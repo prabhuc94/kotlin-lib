@@ -11,6 +11,8 @@ import com.wee3ventures.fontier.R
 import com.wee3ventures.fontier.`interface`.PasswordListener
 import com.wee3ventures.fontier.`interface`.RegisterListener
 import com.wee3ventures.fontier.model.UnErrorModel
+import com.wee3ventures.fontier.ui.toaster.Message
+import com.wee3ventures.fontier.ui.toaster.Message.toast
 import com.wee3ventures.fontier.utils.Fonts
 import com.wee3ventures.fontier.utils.GlideApp
 import kotlinx.android.synthetic.main.fragment_password_setting_form_gdvo.*

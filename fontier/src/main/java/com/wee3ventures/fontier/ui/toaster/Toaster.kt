@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
 import com.wee3ventures.fontier.Enumaration.Fonts
 
@@ -59,7 +60,49 @@ class Toaster(val message: String) {
 
 object Message{
 
-    fun toast(mContext: Context, message: String, mSize : Float? = 16f,mFonts : Fonts? = Fonts.POPPINS_REGULAR, duration: Int? = Toast.LENGTH_LONG){
+    fun Context.toast(message: String, mSize : Float? = 16f,mFonts : Fonts? = Fonts.POPPINS_REGULAR, duration: Int? = Toast.LENGTH_LONG){
+        val toast = Toast.makeText(this, message, Toast.LENGTH_LONG).also {
+            val toastLayout = it.view as LinearLayout
+            val toastTV = toastLayout.getChildAt(0) as TextView
+            toastTV.textSize = mSize!!
+            toastTV.typeface = com.wee3ventures.fontier.utils.Fonts.getFontFace(this, mFonts!!)
+        }
+        toast.duration = duration!!
+        toast.show()
+    }
+
+    fun Fragment.toast(message: String, mSize : Float? = 16f,mFonts : Fonts? = Fonts.POPPINS_REGULAR, duration: Int? = Toast.LENGTH_LONG){
+        val toast = Toast.makeText(this.requireContext(), message, Toast.LENGTH_LONG).also {
+            val toastLayout = it.view as LinearLayout
+            val toastTV = toastLayout.getChildAt(0) as TextView
+            toastTV.textSize = mSize!!
+            toastTV.typeface = com.wee3ventures.fontier.utils.Fonts.getFontFace(this.requireContext(), mFonts!!)
+        }
+        toast.duration = duration!!
+        toast.show()
+    }
+
+    fun Context.snackbar(message: String,textSize : Float ?= 16f, maxLines : Int ?= 3,mFonts : Fonts? = Fonts.POPPINS_REGULAR, duration: Int? = Snackbar.LENGTH_LONG){
+        val snackbar = duration?.let { Snackbar.make( (this as Activity).findViewById(android.R.id.content) , message, it) }
+        ( snackbar?.view?.findViewById(com.google.android.material.R.id.snackbar_text) as TextView ).apply {
+            this.textSize = textSize!!
+            this.maxLines = maxLines!!
+        }
+        snackbar.changeFont(mFonts)
+        snackbar.show()
+    }
+
+    fun Activity.snackbar(message: String,textSize : Float ?= 16f, maxLines : Int ?= 3,mFonts : Fonts? = Fonts.POPPINS_REGULAR, duration: Int? = Snackbar.LENGTH_LONG){
+        val snackbar = duration?.let { Snackbar.make( (this).findViewById(android.R.id.content) , message, it) }
+        ( snackbar?.view?.findViewById(com.google.android.material.R.id.snackbar_text) as TextView ).apply {
+            this.textSize = textSize!!
+            this.maxLines = maxLines!!
+        }
+        snackbar.changeFont(mFonts)
+        snackbar.show()
+    }
+
+    /*fun toast(mContext: Context, message: String, mSize : Float? = 16f,mFonts : Fonts? = Fonts.POPPINS_REGULAR, duration: Int? = Toast.LENGTH_LONG){
         val toast = Toast.makeText(mContext.applicationContext, message, Toast.LENGTH_LONG).also {
             val toastLayout = it.view as LinearLayout
             val toastTV = toastLayout.getChildAt(0) as TextView
@@ -68,9 +111,9 @@ object Message{
         }
         toast.duration = duration!!
         toast.show()
-    }
+    }*/
 
-    fun snackbar(mContext: Context, message: String,textSize : Float ?= 16f, maxLines : Int ?= 3,mFonts : Fonts? = Fonts.POPPINS_REGULAR, duration: Int? = Snackbar.LENGTH_LONG){
+    /*fun snackbar(mContext: Context, message: String,textSize : Float ?= 16f, maxLines : Int ?= 3,mFonts : Fonts? = Fonts.POPPINS_REGULAR, duration: Int? = Snackbar.LENGTH_LONG){
         val snackbar = duration?.let { Snackbar.make( (mContext as Activity).findViewById(android.R.id.content) , message, it) }
         ( snackbar?.view?.findViewById(com.google.android.material.R.id.snackbar_text) as TextView ).apply {
             this.textSize = textSize!!
@@ -78,7 +121,7 @@ object Message{
         }
         snackbar.changeFont(mFonts)
         snackbar.show()
-    }
+    }*/
 
     private fun Snackbar.changeFont(mFonts : Fonts? = Fonts.POPPINS_REGULAR)
     {

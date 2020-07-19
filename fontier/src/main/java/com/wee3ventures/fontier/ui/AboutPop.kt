@@ -10,8 +10,11 @@ import androidx.fragment.app.DialogFragment
 import com.wee3ventures.fontier.Enumaration.Fonts
 import com.wee3ventures.fontier.R
 import com.wee3ventures.fontier.model.AboutModel
+import com.wee3ventures.fontier.ui.toaster.Message
+import com.wee3ventures.fontier.ui.toaster.Message.toast
 import com.wee3ventures.fontier.utils.GlideApp
 import kotlinx.android.synthetic.main.fragment_about_form_common_gdvo.*
+import org.jetbrains.anko.support.v4.toast
 
 class AboutPop (val response : AboutModel) : DialogFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
