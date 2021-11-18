@@ -102,6 +102,16 @@ object Message{
         snackbar.show()
     }
 
+    fun Fragment.snackbar(message: String,textSize : Float ?= 16f, maxLines : Int ?= 3,mFonts : Fonts? = Fonts.POPPINS_REGULAR, duration: Int? = Snackbar.LENGTH_LONG){
+        val snackbar = duration?.let { Snackbar.make(requireActivity().findViewById(android.R.id.content) , message, it) }
+        ( snackbar?.view?.findViewById(com.google.android.material.R.id.snackbar_text) as TextView ).apply {
+            this.textSize = textSize!!
+            this.maxLines = maxLines!!
+        }
+        snackbar.changeFont(mFonts)
+        snackbar.show()
+    }
+
     /*fun toast(mContext: Context, message: String, mSize : Float? = 16f,mFonts : Fonts? = Fonts.POPPINS_REGULAR, duration: Int? = Toast.LENGTH_LONG){
         val toast = Toast.makeText(mContext.applicationContext, message, Toast.LENGTH_LONG).also {
             val toastLayout = it.view as LinearLayout

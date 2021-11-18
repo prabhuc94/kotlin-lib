@@ -26,9 +26,9 @@ class GenderCard : ConstraintLayout {
     private var listener : GenderListener ?= null
     private lateinit var tag : String
 
-    constructor(context: Context?) : super(context) { initView(context = context,attributeSet = null) }
-    constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs) { initView(context = context,attributeSet = attrs) }
-    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) { initView(context = context,attributeSet = attrs) }
+    constructor(context: Context?) : super(context!!) { initView(context = context,attributeSet = null) }
+    constructor(context: Context?, attrs: AttributeSet?) : super(context!!, attrs) { initView(context = context,attributeSet = attrs) }
+    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(context!!, attrs, defStyleAttr) { initView(context = context,attributeSet = attrs) }
 
 
     @SuppressLint("Recycle", "ResourceAsColor")

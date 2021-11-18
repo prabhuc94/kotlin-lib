@@ -1,19 +1,24 @@
 package com.wee3ventures.fontier.ui
 
+import android.content.res.ColorStateList
 import android.graphics.Typeface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.DialogFragment
 import com.wee3ventures.fontier.R
 import com.wee3ventures.fontier.`interface`.LoginListener
+import com.wee3ventures.fontier.extension.Ext.gone
+import com.wee3ventures.fontier.extension.Ext.invisible
+import com.wee3ventures.fontier.extension.Ext.visible
 import com.wee3ventures.fontier.model.LoginModel
 import com.wee3ventures.fontier.utils.Fonts
 import com.wee3ventures.fontier.utils.GlideApp
 import kotlinx.android.synthetic.main.fragment_login_form_common_gdvo.*
 
-class LoginPop(val response : LoginModel, val listener: LoginListener) : DialogFragment(), View.OnClickListener {
+class LoginPop(val response : LoginModel, val listener: LoginListener, var isNewuserAllowed : Boolean ?= true, var buttonColor : Int? = R.color.blue_grey_800) : DialogFragment(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setStyle(DialogFragment.STYLE_NORMAL, R.style.GDOTheme)
@@ -67,6 +72,16 @@ class LoginPop(val response : LoginModel, val listener: LoginListener) : DialogF
                 else -> throw RuntimeException("Some fields are missing")
             }
         }
+
+        if (isNewuserAllowed == true){
+            linearLayout.visible()
+        } else {
+            linearLayout.gone()
+        }
+
+
+
+        buttonColor?.let { loginBtn.backgroundTintList = ColorStateList.valueOf(resources.getColor(it)) }
 
         loginBtn.setOnClickListener(this)
         forgotBtn.setOnClickListener(this)

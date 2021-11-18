@@ -8,7 +8,7 @@ import android.view.inputmethod.EditorInfo
 import android.widget.TextView
 import com.wee3ventures.fontier.Enumaration.Fonts
 
-class FontView(context: Context, attributeSet: AttributeSet) : TextView(context, attributeSet) {
+class FontView(context: Context, attributeSet: AttributeSet) : androidx.appcompat.widget.AppCompatTextView(context, attributeSet) {
 
     init {
         initView(context = context, attributeSet = attributeSet)

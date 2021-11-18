@@ -60,6 +60,12 @@
         <attr name="fontype"/>
     </declare-styleable>
 
+    <declare-styleable name="HintValueView">
+        <attr name="android:background"/>
+        <attr name="android:hint"/>
+        <attr name="android:text"/>
+    </declare-styleable>
+
     <attr name="genderfont" format="enum">
         <enum name="Poppins_Regular" value="1"/>
         <enum name="Poppins_Light" value="2"/>

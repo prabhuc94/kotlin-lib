@@ -93,13 +93,16 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/userLayout"
-                        style="@style/GDVO_INPUT_THEME"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
                         android:layout_marginLeft="32dp"
                         android:layout_marginTop="32dp"
                         android:layout_marginEnd="32dp"
                         android:layout_marginRight="32dp"
                         app:hintEnabled="true"
+                        app:startIconDrawable="@drawable/ic_mail_popup"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
@@ -108,28 +111,25 @@
                             android:id="@+id/userName"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:drawableStart="@drawable/ic_avatar_icon_gdo"
-                            android:drawableLeft="@drawable/ic_avatar_icon_gdo"
-                            android:drawablePadding="10sp"
                             android:fontFamily="@font/poppins_medium"
-                            android:gravity="start|center"
                             android:hint="@string/username"
-                            android:inputType="textPersonName"
-                            android:padding="@dimen/_10sdp"
-                            android:textSize="18sp"
-                            tools:targetApi="jelly_bean" />
+                            android:inputType="textEmailAddress|textWebEmailAddress"
+                            tools:ignore="UnusedAttribute" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/passLayout"
-                        style="@style/GDVO_INPUT_THEME"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
                         android:layout_marginLeft="32dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="32dp"
                         android:layout_marginRight="32dp"
                         app:hintEnabled="true"
+                        app:startIconDrawable="@drawable/ic_locked_icon_gdo"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/userLayout"
@@ -139,16 +139,10 @@
                             android:id="@+id/userPass"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:drawableStart="@drawable/ic_locked_icon_gdo"
-                            android:drawableLeft="@drawable/ic_locked_icon_gdo"
-                            android:drawablePadding="10sp"
-                            android:fontFamily="@font/poppins_medium"
-                            android:gravity="start|center"
+                            android:fontFamily="@font/poppins_regular"
                             android:hint="@string/password"
-                            android:inputType="textWebPassword"
-                            android:padding="@dimen/_10sdp"
-                            android:textSize="18sp"
-                            tools:targetApi="jelly_bean" />
+                            android:inputType="textWebPassword|textPassword"
+                            tools:ignore="UnusedAttribute" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -168,18 +162,17 @@
                         app:useMaterialThemeColors="true"
                         tools:ignore="UnusedAttribute" />
 
-                <com.wee3ventures.fontier.FontView
+                <com.google.android.material.button.MaterialButton
                         android:id="@+id/forgotBtn"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="32dp"
                         android:layout_marginRight="32dp"
-                        android:background="?selectableItemBackground"
-                        android:padding="5sp"
                         android:text="@string/forgot_password"
-                        android:textColor="@color/red_A700"
+                        android:textColor="@color/red_500"
                         android:textSize="@dimen/_13sdp"
-                        app:fontName="Poppins_Medium"
+                        android:textAllCaps="false"
                         app:layout_constraintBottom_toBottomOf="@+id/rememberBox"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/rememberBox" />
@@ -196,12 +189,9 @@
                         android:layout_marginRight="32dp"
                         android:fontFamily="@font/poppins_medium"
                         android:padding="10sp"
-                        android:text="@string/log_in"
+                        android:text="@string/sign_in"
                         android:textAllCaps="true"
-                        android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
-                        android:textSize="18sp"
-                        app:backgroundTint="#3D5AFE"
-                        app:cornerRadius="@dimen/_10sdp"
+                        app:backgroundTint="@color/blue_grey_800"
                         app:elevation="@dimen/_5sdp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -231,7 +221,7 @@
                             android:padding="5sp"
                             android:text="@string/don_t_have_account"
                             android:textSize="@dimen/_12sdp"
-                            app:fontName="Poppins_Medium" />
+                            app:fontName="Poppins_Regular" />
 
                     <com.wee3ventures.fontier.FontView
                             android:id="@+id/signUpBtn"
